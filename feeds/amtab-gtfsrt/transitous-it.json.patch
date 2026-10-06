@@ -1,0 +1,27 @@
+Add AMTAB Bari real-time (GTFS-RT via converter) to feeds/it.json,
+directly after the existing static "Puglia-Bari" entry:
+
+        {
+            "name": "Puglia-Bari",
+            "type": "url",
+            "spec": "gtfs-rt",
+            "url": "https://rt.example.org/trip-updates.pb",
+            "license": {
+                "spdx-identifier": "CC-BY-4.0",
+                "url": "https://amtab.bari.it/it/openmobilitydata",
+                "publisher": "AMTAB S.p.A.",
+                "publisher-url": "https://www.amtab.it/",
+                "attribution-text": "Realtime data © AMTAB S.p.A., converted from AMTAB's JSON GTFS-RT export to protobuf by the Publit project."
+            }
+        },
+
+Pull request description (draft):
+
+  Bari (AMTAB) currently has timetable data only. AMTAB publishes real-time data
+  as JSON-encoded GTFS-RT (https://amtab.bari.it/images/Servizio_Export_GTFS.pdf).
+  This adds a protobuf conversion of that export. IDs are passed through unchanged
+  and were checked against the Puglia-Bari static feed (trip_id, route_id, stop_id,
+  stop_sequence: 100 % match on a live sample). Converter source:
+  <repo URL>/feeds/amtab-gtfsrt. License of the real-time export: not stated
+  explicitly by AMTAB; assumed identical to the static feed (CC-BY-4.0). Happy to
+  adjust if you prefer to wait for written confirmation from AMTAB.

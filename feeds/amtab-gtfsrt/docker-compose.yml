@@ -1,0 +1,13 @@
+services:
+  amtab-gtfsrt:
+    build: .
+    restart: unless-stopped
+    environment:
+      USER_AGENT: "Publit-AMTAB-GTFSRT/0.1 (+https://github.com/elija-7580/Publit-)"
+      CACHE_SECONDS: "20"
+    networks: [caddy]
+    # no published port: Caddy reaches it on the shared network
+
+networks:
+  caddy:
+    external: true
