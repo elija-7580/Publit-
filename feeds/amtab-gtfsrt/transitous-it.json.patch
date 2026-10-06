@@ -8,10 +8,10 @@ directly after the existing static "Puglia-Bari" entry:
             "url": "https://rt.example.org/trip-updates.pb",
             "license": {
                 "spdx-identifier": "CC-BY-4.0",
-                "url": "https://amtab.bari.it/it/openmobilitydata",
+                "url": "https://opendata.comune.bari.it/dataset/amtab-servizi-di-trasporto-sosta-e-mobilita",
                 "publisher": "AMTAB S.p.A.",
                 "publisher-url": "https://www.amtab.it/",
-                "attribution-text": "Realtime data © AMTAB S.p.A., converted from AMTAB's JSON GTFS-RT export to protobuf by the Publit project."
+                "attribution-text": "This feed contains derivative realtime data based on public transport data provided by AMTAB S.p.A., licensed under CC-BY. Realtime feed produced by Publit."
             }
         },
 
@@ -22,6 +22,11 @@ Pull request description (draft):
   This adds a protobuf conversion of that export. IDs are passed through unchanged
   and were checked against the Puglia-Bari static feed (trip_id, route_id, stop_id,
   stop_sequence: 100 % match on a live sample). Converter source:
-  <repo URL>/feeds/amtab-gtfsrt. License of the real-time export: not stated
-  explicitly by AMTAB; assumed identical to the static feed (CC-BY-4.0). Happy to
-  adjust if you prefer to wait for written confirmation from AMTAB.
+  https://github.com/elija-7580/Publit-/tree/main/feeds/amtab-gtfsrt. License: the static AMTAB GTFS is published on the Comune di Bari open data
+  portal under CC-BY. The real-time export is offered by AMTAB on its
+  "OpenMobilityData" page (https://amtab.bari.it/it/openmobilitydata) explicitly
+  for app developers, without a separate license. AMTAB is owned by the Comune
+  di Bari; under Italian CAD art. 52(2), data published by such bodies without
+  an explicit license are considered open data. Entry modelled on the existing
+  Sicilia-Messina-ATM realtime entry. Happy to adjust if you prefer written
+  confirmation from AMTAB first.
