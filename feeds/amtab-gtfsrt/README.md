@@ -45,10 +45,10 @@ rt.example.org {
 }
 ```
 
-## Transitous entry
+## Status
 
-See `transitous-it.json.patch`. The real-time source uses the same `name` as the static feed (`Puglia-Bari`), like the existing Messina entry.
+Not yet deployed. Once a public URL exists, the feed will be proposed to Transitous under the same `name` as the static AMTAB feed (`Puglia-Bari`).
 
 ## License
 
-Code: MIT (repository license). Data: © AMTAB S.p.A.; license of the real-time export to be confirmed with AMTAB (static GTFS is listed as CC-BY-4.0 in Transitous).
+Code: MIT (repository license). Data: © AMTAB S.p.A. The static AMTAB GTFS is published under CC-BY on the [Comune di Bari open data portal](https://opendata.comune.bari.it/dataset/amtab-servizi-di-trasporto-sosta-e-mobilita); the real-time export is offered by AMTAB for app developers on its OpenMobilityData page.

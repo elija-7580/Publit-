@@ -1,45 +1,36 @@
 # Publit
 
-Fast, ad-free public transport for iPhone. Departures near you, trip planning across Europe, and a route overview that lets you compare every connection on one time axis.
+**Public transport, without the noise.** A free, open-source transit app for iPhone: live departures near you, trip planning across Europe, and every connection on one timeline.
 
-Open source (MIT), free, no account, no tracking. watchOS companion planned.
+No ads, no account, no tracking.
 
-## Why
+![Publit on iPhone](docs/images/hero.jpg)
 
-Mainstream transit apps bury the information you need at the stop behind ads, slow screens, and subscriptions. Publit shows the same core information natively, instantly, and without a paywall.
+| Nearby | Plan | Compare | Route |
+| --- | --- | --- | --- |
+| ![Nearby departures](docs/images/nearby.jpg) | ![Trip planning](docs/images/plan.jpg) | ![Route comparison on a map](docs/images/compare.jpg) | ![Route detail](docs/images/detail.jpg) |
 
-## Features (v0.1)
+<sub>Prototype renderings of the v0.1 interface, filled with live Transitous data (Munich, October 2026).</sub>
 
-- **Nearby:** live departure boards for all stops within 500 m (1.5 km fallback), grouped by station, auto-refresh every 30 s, delay and live indicators, platforms.
-- **Plan:** from/to search (addresses, stops, places), depart-at / arrive-by, auto-search on every change.
-- **Compare routes:** all connections on a shared timeline bar, plus a map that overlays every route with the selected one highlighted. Earlier/later paging.
-- **Route detail:** map, legs with lines, platforms, delays, stop counts, alerts.
-- **Saved:** favourite stops and places, stored on the device only.
+## Status
 
-## How it works
+Early prototype (v0.1). Not on the App Store yet.
 
-| Layer | Choice |
-| --- | --- |
-| UI | SwiftUI, iOS 17+, Observation, MapKit for SwiftUI |
-| Data | [Transitous](https://transitous.org) MOTIS 2 API (`/api/v6/plan`, `/api/v6/stoptimes`, `/api/v1/geocode`) |
-| Coverage | Open GTFS / GTFS-RT feeds aggregated by Transitous. Europe is the launch focus; quality varies by region. |
-| State | `AppState` → `PlanModel`, `LocationManager`, `FavoritesStore` injected via `environment` |
+## Features
 
-```
-Sources/
-  App/        entry point, tabs, app info
-  API/        TransitousClient (User-Agent, decoding, errors)
-  Models/     Decodable API models, line styling
-  Location/   CoreLocation wrapper
-  Stores/     favourites, trip-planning state
-  Util/       polyline decoder, formatting
-  Views/      Nearby, Plan, Route detail, Search, Saved
-Tests/        decoding + polyline tests with recorded API fixtures
-```
+- **Nearby:** live departure boards for every stop within 500 m, grouped by station, refreshed every 30 s, with delays, platforms and cancellations.
+- **Plan:** search addresses, stops and places; depart at or arrive by.
+- **Compare:** all connections on a shared timeline, plus a map that overlays every option.
+- **Route detail:** legs, lines, platforms, stop counts, transfers and service alerts.
+- **Saved:** favourite stops and places, stored only on the device.
+
+## Coverage
+
+Publit gets its routing and timetables from [Transitous](https://transitous.org), a community-run service that combines open GTFS and GTFS-Realtime feeds. Where a city's data is missing or broken, the project fixes it upstream so that every open app benefits. Example: [`feeds/amtab-gtfsrt`](feeds/amtab-gtfsrt) converts the real-time data of the Bari city buses (AMTAB) into standard GTFS-Realtime.
 
 ## Build
 
-Requirements: macOS with Xcode 15 or newer, [XcodeGen](https://github.com/yonaskolb/XcodeGen).
+Requirements: macOS, Xcode 15 or newer, [XcodeGen](https://github.com/yonaskolb/XcodeGen).
 
 ```bash
 brew install xcodegen
@@ -47,27 +38,37 @@ xcodegen generate
 open Publit.xcodeproj
 ```
 
-Before the first build:
+Set your Apple team in Xcode under Signing & Capabilities (or `DEVELOPMENT_TEAM` in `project.yml`). Run the tests with ⌘U.
 
-1. Set `PublitContact` in `project.yml` to the public repository URL (sent in the User-Agent, required by Transitous).
-2. Set `DEVELOPMENT_TEAM` and, if needed, `PRODUCT_BUNDLE_IDENTIFIER` to values from your Apple developer account.
-3. Run `xcodegen generate` again after editing `project.yml`.
+```
+Sources/
+  App/        entry point, tabs, app info
+  API/        Transitous client
+  Models/     API models, line styling
+  Location/   CoreLocation wrapper
+  Stores/     favourites, trip-planning state
+  Util/       polyline decoder, formatting
+  Views/      Nearby, Plan, Route detail, Search, Saved
+Tests/        decoding and polyline tests with recorded fixtures
+feeds/        data converters contributed to Transitous
+```
 
-Run tests with ⌘U.
+## Data and attribution
 
-## Data use and attribution
+Routing and timetables: [Transitous and its data sources](https://transitous.org/sources/). Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright). Publit follows the [Transitous API policy](https://transitous.org/api/): open source, non-commercial, identifying User-Agent, visible attribution.
 
-Publit uses the community-run Transitous API under its [usage policy](https://transitous.org/api/): open-source code, non-commercial use, an identifying User-Agent, and visible attribution to [Transitous' data sources](https://transitous.org/sources/) and [OpenStreetMap](https://www.openstreetmap.org/copyright). Before a public release with real user numbers, coordinate expected load with the Transitous team on Matrix.
-
-Publit is an independent project. It does not use code, assets, text, data, or APIs from any other transit app.
+Publit is an independent project and does not use code, assets or data from other transit apps.
 
 ## Roadmap
 
 - Live Activities and widgets for the next departure
-- watchOS companion (nearby departures, saved stops)
-- Line and trip view with live vehicle position
-- Service alerts on favourites
-- Offline cache for saved stops
+- watchOS companion
+- Line view with live vehicle positions
+- More cities with real-time data, starting with Bari
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
