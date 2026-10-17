@@ -1,0 +1,400 @@
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks -remove-static-executable /Users/runner/work/Publit/Publit/build/Build/Products/Debug-watchsimulator/PublitWatch.app /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Watch
+
+ProcessInfoPlistFile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Info.plist /Users/runner/work/Publit/Publit/Config/Info.plist (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-infoPlistUtility /Users/runner/work/Publit/Publit/Config/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitShare.appex -scanforprivacyfile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitWidgets.appex -scanforprivacyfile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Watch/PublitWatch.app -o /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Info.plist
+
+ExtractAppIntentsMetadata (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name Publit --sdk-root /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 17.0 --bundle-identifier io.github.publit.app --output /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Publit --dependency-file /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Objects-normal/arm64/Publit_dependency_info.dat --stringsdata-file /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Objects-normal/arm64/Publit.SwiftFileList --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Publit.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Publit.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Objects-normal/arm64/Publit.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents
+2026-10-17 13:36:07.395 appintentsmetadataprocessor[12351:39809] Starting appintentsmetadataprocessor export
+2026-10-17 13:36:07.596 appintentsmetadataprocessor[12351:39809] Writing Metadata.appintents
+2026-10-17 13:36:07.596 appintentsmetadataprocessor[12351:39809] Metadata root: /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Metadata.appintents
+
+CopySwiftLibs /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Publit.debug.dylib --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Frameworks --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/SystemExtensions --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ValidateEmbeddedBinary /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Watch/PublitWatch.app (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/embeddedBinaryValidationUtility /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Watch/PublitWatch.app -info-plist-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Info.plist
+
+ValidateEmbeddedBinary /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitWidgets.appex (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/embeddedBinaryValidationUtility /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitWidgets.appex -info-plist-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Info.plist
+
+ValidateEmbeddedBinary /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitShare.appex (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/embeddedBinaryValidationUtility /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitShare.appex -info-plist-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Info.plist
+
+ValidateAppShortcutStringsMetadata (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appshortcutstringsprocessor --source-file /Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings --input-data-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Metadata.appintents --platform-family iOS --deployment-target 17.0 --validate-assistant-intents --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Publit.DependencyMetadataFileList
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:uk:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:uk:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:hu:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:hu:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:fr:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:fr:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:sv:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:sv:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:ro:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:ro:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:es:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:es:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:cs:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:cs:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pt-PT:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pt-PT:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:nl:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:nl:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:el:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:el:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:tr:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:tr:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:it:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:it:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pl:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pl:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:de:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:de:Show my ${applicationName} ticket: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:ro:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:ro:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:it:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:it:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:uk:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:uk:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:el:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:el:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:de:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:de:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:es:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:es:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:hu:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:hu:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:tr:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:tr:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:fr:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:fr:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pt-PT:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pt-PT:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:nl:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:nl:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pl:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:pl:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:sv:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:sv:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:cs:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+/Users/runner/work/Publit/Publit/Sources/App/AppShortcuts.xcstrings:cs:Show my ticket in ${applicationName}: warning: This phrase is not used in any App Shortcut or as a Negative Phrase. (in target 'Publit' from project 'Publit')
+
+AppIntentsSSUTraining (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Info.plist --temp-dir-path /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/ssu --bundle-id io.github.publit.app --product-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app --extracted-metadata-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Metadata.appintents --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/Publit.DependencyMetadataFileList --archive-ssu-assets
+2026-10-17 13:36:10.502 appintentsnltrainingprocessor[12656:40476] Parsing options for appintentsnltrainingprocessor
+2026-10-17 13:36:10.506 appintentsnltrainingprocessor[12656:40476] Starting AppIntents SSU YAML Generation
+2026-10-17 13:36:10.518 appintentsnltrainingprocessor[12656:40476] error: Unable to parse extract.actionsdata
+2026-10-17 13:36:10.519 appintentsnltrainingprocessor[12656:40476] error: Unable to parse extract.actionsdata
+2026-10-17 13:36:10.545 appintentsnltrainingprocessor[12656:40476] Training 'Nächste Abfahrten in ${+applicationName}|Nächste Abfahrten an ${StopEntity} in ${+applicationName}|Abfahrten an ${StopEntity} in ${+applicationName}' for de
+2026-10-17 13:36:10.546 appintentsnltrainingprocessor[12656:40476] Training 'Najbliższe odjazdy w ${+applicationName}|Najbliższe odjazdy z ${StopEntity} w ${+applicationName}|Odjazdy z ${StopEntity} w ${+applicationName}' for pl
+2026-10-17 13:36:10.546 appintentsnltrainingprocessor[12656:40476] Training 'Próximas partidas no ${+applicationName}|Próximas partidas em ${StopEntity} no ${+applicationName}|Partidas em ${StopEntity} no ${+applicationName}' for pt-PT
+2026-10-17 13:36:10.546 appintentsnltrainingprocessor[12656:40476] Training 'Επόμενες αναχωρήσεις στο ${+applicationName}|Επόμενες αναχωρήσεις από ${StopEntity} στο ${+applicationName}|Αναχωρήσεις από ${StopEntity} στο ${+applicationName}' for el
+2026-10-17 13:36:10.547 appintentsnltrainingprocessor[12656:40476] Training 'Nejbližší odjezdy v ${+applicationName}|Nejbližší odjezdy z ${StopEntity} v ${+applicationName}|Odjezdy z ${StopEntity} v ${+applicationName}' for cs
+2026-10-17 13:36:10.547 appintentsnltrainingprocessor[12656:40476] Training 'Nästa avgångar i ${+applicationName}|Nästa avgångar från ${StopEntity} i ${+applicationName}|Avgångar från ${StopEntity} i ${+applicationName}' for sv
+2026-10-17 13:36:10.548 appintentsnltrainingprocessor[12656:40476] Training 'Prochains départs dans ${+applicationName}|Prochains départs à ${StopEntity} dans ${+applicationName}|Départs à ${StopEntity} dans ${+applicationName}' for fr
+2026-10-17 13:36:10.548 appintentsnltrainingprocessor[12656:40476] Training 'Next departures in ${+applicationName}|Next departures at ${StopEntity} in ${+applicationName}|Departures at ${StopEntity} in ${+applicationName}' for en
+2026-10-17 13:36:10.548 appintentsnltrainingprocessor[12656:40476] Training 'Próximas salidas en ${+applicationName}|Próximas salidas en ${StopEntity} en ${+applicationName}|Salidas en ${StopEntity} en ${+applicationName}' for es
+2026-10-17 13:36:10.549 appintentsnltrainingprocessor[12656:40476] Training 'Următoarele plecări în ${+applicationName}|Următoarele plecări din ${StopEntity} în ${+applicationName}|Plecări din ${StopEntity} în ${+applicationName}' for ro
+2026-10-17 13:36:10.549 appintentsnltrainingprocessor[12656:40476] Training 'Volgende vertrektijden in ${+applicationName}|Volgende vertrektijden bij ${StopEntity} in ${+applicationName}|Vertrektijden bij ${StopEntity} in ${+applicationName}' for nl
+2026-10-17 13:36:10.550 appintentsnltrainingprocessor[12656:40476] Training 'Найближчі відправлення в ${+applicationName}|Найближчі відправлення з ${StopEntity} в ${+applicationName}|Відправлення з ${StopEntity} в ${+applicationName}' for uk
+2026-10-17 13:36:10.550 appintentsnltrainingprocessor[12656:40476] Training 'Következő indulások a(z) ${+applicationName} appban|Következő indulások innen: ${StopEntity}, ${+applicationName}|Indulások innen: ${StopEntity}, ${+applicationName}' for hu
+2026-10-17 13:36:10.551 appintentsnltrainingprocessor[12656:40476] Training 'Prossime partenze in ${+applicationName}|Prossime partenze da ${StopEntity} in ${+applicationName}|Partenze da ${StopEntity} in ${+applicationName}' for it
+2026-10-17 13:36:10.551 appintentsnltrainingprocessor[12656:40476] Training '${+applicationName} ile sonraki kalkışlar|${+applicationName} ile ${StopEntity} durağından sonraki kalkışlar|${+applicationName} ile ${StopEntity} kalkışları' for tr
+2026-10-17 13:36:10.551 appintentsnltrainingprocessor[12656:40476] Training 'Bring mich mit ${+applicationName} nach Hause|Heimweg in ${+applicationName}' for de
+2026-10-17 13:36:10.551 appintentsnltrainingprocessor[12656:40476] Training 'Zabierz mnie do domu z ${+applicationName}|Trasa do domu w ${+applicationName}' for pl
+2026-10-17 13:36:10.551 appintentsnltrainingprocessor[12656:40476] Training 'Leva-me para casa com o ${+applicationName}|Rota para casa no ${+applicationName}' for pt-PT
+2026-10-17 13:36:10.551 appintentsnltrainingprocessor[12656:40476] Training 'Πήγαινέ με σπίτι με το ${+applicationName}|Διαδρομή για το σπίτι στο ${+applicationName}' for el
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Doveď mě domů s ${+applicationName}|Trasa domů v ${+applicationName}' for cs
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Ta mig hem med ${+applicationName}|Resväg hem i ${+applicationName}' for sv
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Ramène-moi à la maison avec ${+applicationName}|Itinéraire pour rentrer dans ${+applicationName}' for fr
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Take me home with ${+applicationName}|Route home in ${+applicationName}' for en
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Llévame a casa con ${+applicationName}|Ruta a casa en ${+applicationName}' for es
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Du-mă acasă cu ${+applicationName}|Rută spre casă în ${+applicationName}' for ro
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Breng me naar huis met ${+applicationName}|Route naar huis in ${+applicationName}' for nl
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Відвези мене додому з ${+applicationName}|Маршрут додому в ${+applicationName}' for uk
+2026-10-17 13:36:10.552 appintentsnltrainingprocessor[12656:40476] Training 'Vigyél haza a(z) ${+applicationName} segítségével|Útvonal haza a(z) ${+applicationName} appban' for hu
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Portami a casa con ${+applicationName}|Percorso verso casa in ${+applicationName}' for it
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training '${+applicationName} ile beni eve götür|${+applicationName} ile eve rota' for tr
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Weg zur Arbeit in ${+applicationName}' for de
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Trasa do pracy w ${+applicationName}' for pl
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Rota para o trabalho no ${+applicationName}' for pt-PT
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Διαδρομή για τη δουλειά στο ${+applicationName}' for el
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Trasa do práce v ${+applicationName}' for cs
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Resväg till jobbet i ${+applicationName}' for sv
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Itinéraire pour le travail dans ${+applicationName}' for fr
+2026-10-17 13:36:10.553 appintentsnltrainingprocessor[12656:40476] Training 'Route to work in ${+applicationName}' for en
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training 'Ruta al trabajo en ${+applicationName}' for es
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training 'Rută spre serviciu în ${+applicationName}' for ro
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training 'Route naar werk in ${+applicationName}' for nl
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training 'Маршрут на роботу в ${+applicationName}' for uk
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training 'Útvonal a munkahelyre a(z) ${+applicationName} appban' for hu
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training 'Percorso verso il lavoro in ${+applicationName}' for it
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training '${+applicationName} ile işe rota' for tr
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for de
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for pl
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for pt-PT
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for el
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for cs
+2026-10-17 13:36:10.554 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for sv
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for fr
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for en
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for es
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for ro
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for nl
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for uk
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for hu
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for it
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Training Negative Phrases '' for tr
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for de
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for pl
+2026-10-17 13:36:10.555 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for pt-PT
+2026-10-17 13:36:10.556 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for el
+2026-10-17 13:36:10.556 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for cs
+2026-10-17 13:36:10.556 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for sv
+2026-10-17 13:36:10.556 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for fr
+2026-10-17 13:36:10.556 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for en
+2026-10-17 13:36:10.556 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for es
+2026-10-17 13:36:10.557 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for ro
+2026-10-17 13:36:10.557 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for nl
+2026-10-17 13:36:10.557 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for uk
+2026-10-17 13:36:10.557 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for hu
+2026-10-17 13:36:10.557 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for it
+2026-10-17 13:36:10.558 appintentsnltrainingprocessor[12656:40476] Application name 'Publit' for tr
+2026-10-17 13:36:10.657 appintentsnltrainingprocessor[12656:40476] Generated AppIntents SSU YAML files in file:///Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/Publit.build/ssu/
+2026-10-17 13:36:10.657 appintentsnltrainingprocessor[12656:40476] Copied AppIntents SSU YAML files to file:///Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Metadata.appintents/
+Archiving all locales.
+[------------------------------------------------------------] 0% archiving pl[🁢🁢🁢🁢--------------------------------------------------------] 6% archived pl[🁢🁢🁢🁢--------------------------------------------------------] 6% archiving en[🁢🁢🁢🁢🁢🁢🁢🁢----------------------------------------------------] 13% archived en[🁢🁢🁢🁢🁢🁢🁢🁢----------------------------------------------------] 13% archiving pt-PT[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------------------------------------------] 20% archived pt-PT[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------------------------------------------] 20% archiving de[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------------------------------------------] 26% archived de[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------------------------------------------] 26% archiving sv[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----------------------------------------] 33% archived sv[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----------------------------------------] 33% archiving fr[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------------------------------] 40% archived fr[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------------------------------] 40% archiving ro[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------------------------------] 46% archived ro[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------------------------------] 46% archiving cs[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----------------------------] 53% archived cs[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----------------------------] 53% archiving hu[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------------------] 60% archived hu[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------------------] 60% archiving tr[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------------------] 66% archived tr[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------------------] 66% archiving el[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----------------] 73% archived el[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----------------] 73% archiving nl[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------] 80% archived nl[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢------------] 80% archiving it[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------] 86% archived it[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢--------] 86% archiving es[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----] 93% archived es[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢----] 93% archiving uk[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢] 100% archived uk[🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢🁢] 100% archived 15 locales/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/pl.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/pl.lproj/nlu.appintents/df35c53fe9a43c70738a148b95b785e1.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/en.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/en.lproj/nlu.appintents/598095df2e9c07aaf64ce7cb9f99e6d8.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/pt-PT.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/pt-PT.lproj/nlu.appintents/7e269fcd45a3c4d7be29e6b46014b574.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/de.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/de.lproj/nlu.appintents/26cd3bf5803923b8eb5bcd5e66a0026f.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/sv.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/sv.lproj/nlu.appintents/555510b6df807ba59a5f10d4c97d7f45.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/fr.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/fr.lproj/nlu.appintents/20cc29d3f58fad643be9a2c8bc997f92.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/ro.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/ro.lproj/nlu.appintents/ab53dd8b923afea031a21b476d3d2a87.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/cs.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/cs.lproj/nlu.appintents/9777671e7984dbb7ef55a74c0ff5c910.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/hu.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/hu.lproj/nlu.appintents/7d44e908ae7ffa3dba3197e63904ff4b.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/tr.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/tr.lproj/nlu.appintents/c6ee85f5c7586bf3e40e51a6502e89c8.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/el.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/el.lproj/nlu.appintents/5f1f6fb40a4c526e2231f4fe46bea635.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/nl.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/nl.lproj/nlu.appintents/f18c06a8a34582f2a26ed0c935e02b39.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/it.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/it.lproj/nlu.appintents/5215cc4440a49023466394f1140d5789.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/es.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/es.lproj/nlu.appintents/c4e37d0b3459ca6323e08e7141431da0.version
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/uk.lproj/nlu.appintents
+/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/uk.lproj/nlu.appintents/61498034654d148510f944eb7dfacc02.version
+
+
+ProcessInfoPlistFile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Info.plist /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/empty-PublitTests.plist (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-infoPlistUtility /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/empty-PublitTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Info.plist
+
+Ld /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/PublitTests normal (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -bundle -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -O0 -L/Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks -filelist /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -bundle_loader /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Publit -Xlinker -object_path_lto -Xlinker /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests.swiftmodule -framework XCTest -lXCTestSwiftSupport /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/Publit.debug.dylib -o /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/PublitTests
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/wikidata_search.json /Users/runner/work/Publit/Publit/Tests/Fixtures/wikidata_search.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/wikidata_search.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/wikidata_entities.json /Users/runner/work/Publit/Publit/Tests/Fixtures/wikidata_entities.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/wikidata_entities.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/trip_s3.json /Users/runner/work/Publit/Publit/Tests/Fixtures/trip_s3.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/trip_s3.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/stoptimes_marienplatz.json /Users/runner/work/Publit/Publit/Tests/Fixtures/stoptimes_marienplatz.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/stoptimes_marienplatz.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/stoptimes.json /Users/runner/work/Publit/Publit/Tests/Fixtures/stoptimes.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/stoptimes.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/rentals.json /Users/runner/work/Publit/Publit/Tests/Fixtures/rentals.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/rentals.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan_walk_steps.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_walk_steps.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_walk_steps.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan_roma.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_roma.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_roma.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan_rental.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_rental.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_rental.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan_muc.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_muc.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_muc.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan_long_walk.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_long_walk.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_long_walk.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan_direct_modes.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_direct_modes.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan_direct_modes.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/plan.json /Users/runner/work/Publit/Publit/Tests/Fixtures/plan.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/plan.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/mapstops_marienplatz.json /Users/runner/work/Publit/Publit/Tests/Fixtures/mapstops_marienplatz.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/mapstops_marienplatz.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/map_trips.json /Users/runner/work/Publit/Publit/Tests/Fixtures/map_trips.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/map_trips.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CpResource /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/geocode.json /Users/runner/work/Publit/Publit/Tests/Fixtures/geocode.json (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/Publit/Publit/Tests/Fixtures/geocode.json /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+CopySwiftLibs /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/PublitTests --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Frameworks --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/PlugIns --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/SystemExtensions --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name PublitTests --sdk-root /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 17.0 --bundle-identifier io.github.publit.PublitTests --output /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/PublitTests --dependency-file /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests_dependency_info.dat --stringsdata-file /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests.SwiftFileList --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/PublitTests.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/PublitTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/Objects-normal/arm64/PublitTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-17 13:36:13.100 appintentsmetadataprocessor[12963:41145] Starting appintentsmetadataprocessor export
+2026-10-17 13:36:13.173 appintentsmetadataprocessor[12963:41145] Extracted no relevant App Intents symbols, skipping writing output
+
+AppIntentsSSUTraining (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Info.plist --temp-dir-path /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/ssu --bundle-id io.github.publit.PublitTests --product-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest --extracted-metadata-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest/Metadata.appintents --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitTests.build/PublitTests.DependencyMetadataFileList --archive-ssu-assets
+2026-10-17 13:36:13.197 appintentsnltrainingprocessor[12964:41150] Parsing options for appintentsnltrainingprocessor
+2026-10-17 13:36:13.197 appintentsnltrainingprocessor[12964:41150] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-RegisterExecutionPolicyException /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+Touch /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest (in target 'PublitTests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /usr/bin/touch -c /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app/PlugIns/PublitTests.xctest
+
+RegisterExecutionPolicyException /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-RegisterExecutionPolicyException /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app
+
+Validate /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-validationUtility /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app (in target 'Publit' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /usr/bin/touch -c /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/Publit.app
+
+ProcessInfoPlistFile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Info.plist /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/empty-PublitUITests.plist (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-infoPlistUtility /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/empty-PublitUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Info.plist
+
+Ld /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/PublitUITests normal (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -bundle -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -O0 -L/Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks -filelist /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests.swiftmodule -framework XCTest -lXCTestSwiftSupport -o /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/PublitUITests
+
+CopySwiftLibs /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/PublitUITests --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Frameworks --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/PlugIns --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/SystemExtensions --scan-folder /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name PublitUITests --sdk-root /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk --xcode-version 16F6 --platform-family iOS --deployment-target 17.0 --bundle-identifier io.github.publit.PublitUITests --output /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/PublitUITests --dependency-file /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests_dependency_info.dat --stringsdata-file /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests.SwiftFileList --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/PublitUITests.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/PublitUITests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/Objects-normal/arm64/PublitUITests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-17 13:36:13.519 appintentsmetadataprocessor[12969:41164] Starting appintentsmetadataprocessor export
+2026-10-17 13:36:13.522 appintentsmetadataprocessor[12969:41164] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Info.plist --temp-dir-path /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/ssu --bundle-id io.github.publit.PublitUITests --product-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest --extracted-metadata-path /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Metadata.appintents --metadata-file-list /Users/runner/work/Publit/Publit/build/Build/Intermediates.noindex/Publit.build/Debug-iphonesimulator/PublitUITests.build/PublitUITests.DependencyMetadataFileList --archive-ssu-assets
+2026-10-17 13:36:13.543 appintentsnltrainingprocessor[12970:41165] Parsing options for appintentsnltrainingprocessor
+2026-10-17 13:36:13.544 appintentsnltrainingprocessor[12970:41165] No AppShortcuts found - Skipping.
+
+MkDir /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /bin/mkdir -p /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app
+
+CopyAndPreserveArchs /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PublitUITests-Runner (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/XCTRunner -output /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PublitUITests-Runner -extract arm64
+
+CopyPlistFile /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Info.plist /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/Info.plist (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copyPlist --validate --convert xml1 --macro-expansion WRAPPEDPRODUCTNAME PublitUITests-Runner --macro-expansion WRAPPEDPRODUCTBUNDLEIDENTIFIER io.github.publit.PublitUITests.xctrunner --macro-expansion TESTPRODUCTNAME PublitUITests --macro-expansion TESTPRODUCTBUNDLEIDENTIFIER io.github.publit.PublitUITests --copy-value UIDeviceFamily /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest/Info.plist --outdir /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app -- /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/Info.plist
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PkgInfo /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/PkgInfo (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/PkgInfo /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/libXCTestSwiftSupport.dylib /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/XCUnit.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/XCUIAutomation.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/XCTestSupport.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/XCTestCore.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/XCTest.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/XCTAutomationSupport.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks/Testing.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/Frameworks
+
+RegisterExecutionPolicyException /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    builtin-RegisterExecutionPolicyException /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest
+
+Touch /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest (in target 'PublitUITests' from project 'Publit')
+    cd /Users/runner/work/Publit/Publit
+    /usr/bin/touch -c /Users/runner/work/Publit/Publit/build/Build/Products/Debug-iphonesimulator/PublitUITests-Runner.app/PlugIns/PublitUITests.xctest
+
+** TEST BUILD SUCCEEDED **
+

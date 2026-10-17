@@ -1,0 +1,400 @@
+    t =    12.45s Tap "savePass" Button
+    t =    12.45s     Wait for io.github.publit.app to idle
+    t =    12.45s     Find the "savePass" Button
+    t =    12.60s     Check for interrupting elements affecting "savePass" Button
+    t =    12.67s     Synthesize event
+    t =    13.00s     Wait for io.github.publit.app to idle
+    t =    13.17s Waiting 10.0s for "passCard" Button to exist
+    t =    14.20s     Checking `Expect predicate `existsNoRetry == 1` for object "passCard" Button`
+    t =    14.20s         Checking existence of `"passCard" Button`
+    t =    14.28s Tap "passCard" Button
+    t =    14.28s     Wait for io.github.publit.app to idle
+    t =    14.28s     Find the "passCard" Button
+    t =    14.37s     Check for interrupting elements affecting "passCard" Button
+    t =    14.40s     Synthesize event
+    t =    14.70s     Wait for io.github.publit.app to idle
+    t =    15.22s Waiting 10.0s for "showOriginal" Button to exist
+    t =    16.25s     Checking `Expect predicate `existsNoRetry == 1` for object "showOriginal" Button`
+    t =    16.25s         Checking existence of `"showOriginal" Button`
+    t =    16.41s Added attachment named 'shared-ticket-detail-pdf'
+    t =    16.42s Terminate io.github.publit.app:42151
+    t =    17.42s Open io.github.publit.app
+    t =    17.42s     Launch io.github.publit.app
+    t =    17.71s         Setting up automation session
+    t =    19.47s         Wait for io.github.publit.app to idle
+    t =    21.94s Waiting 30.0s for "savePass" Button to exist
+    t =    22.95s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =    22.95s         Checking existence of `"savePass" Button`
+    t =    23.32s         Capturing element debug description
+    t =    24.04s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =    24.04s         Checking existence of `"savePass" Button`
+    t =    24.10s         Capturing element debug description
+    t =    25.02s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =    25.02s         Checking existence of `"savePass" Button`
+    t =    25.12s Checking existence of `"sharedTicketAdded" StaticText`
+    t =    25.18s Find the Window (First Match)
+    t =    25.19s Waiting 2.0s for "mapTicketFields" Button to exist
+    t =    26.19s     Checking `Expect predicate `existsNoRetry == 1` for object "mapTicketFields" Button`
+    t =    26.19s         Checking existence of `"mapTicketFields" Button`
+    t =    26.25s Find the "mapTicketFields" Button
+    t =    26.32s Press Window at {{0.0, 0.0}, {402.0, 874.0}}[0.50, 0.32] for 0.1 seconds, then drag to Window at {{0.0, 0.0}, {402.0, 874.0}}[0.50, 0.10] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    26.32s     Wait for io.github.publit.app to idle
+    t =    26.32s     Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    26.33s     Check for interrupting elements affecting Window
+    t =    26.39s     Synthesize event
+    t =    26.39s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    26.42s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    26.43s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    26.44s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    26.45s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    27.16s     Wait for io.github.publit.app to idle
+    t =    28.84s Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    28.85s Waiting 2.0s for "mapTicketFields" Button to exist
+    t =    29.89s     Checking `Expect predicate `existsNoRetry == 1` for object "mapTicketFields" Button`
+    t =    29.89s         Checking existence of `"mapTicketFields" Button`
+    t =    30.04s Find the "mapTicketFields" Button
+    t =    30.14s Find the "mapTicketFields" Button
+    t =    30.36s Added attachment named 'shared-ticket-review-image'
+    t =    30.37s Tap "savePass" Button
+    t =    30.37s     Wait for io.github.publit.app to idle
+    t =    30.37s     Find the "savePass" Button
+    t =    30.45s     Check for interrupting elements affecting "savePass" Button
+    t =    30.51s     Synthesize event
+    t =    30.81s     Wait for io.github.publit.app to idle
+    t =    30.82s Waiting 10.0s for "passCard" Button to exist
+    t =    31.84s     Checking `Expect predicate `existsNoRetry == 1` for object "passCard" Button`
+    t =    31.84s         Checking existence of `"passCard" Button`
+    t =    31.91s Tap "passCard" Button
+    t =    31.91s     Wait for io.github.publit.app to idle
+    t =    31.91s     Find the "passCard" Button
+    t =    31.99s     Check for interrupting elements affecting "passCard" Button
+    t =    32.02s     Synthesize event
+    t =    32.32s     Wait for io.github.publit.app to idle
+    t =    32.80s Waiting 10.0s for "showOriginal" Button to exist
+    t =    33.82s     Checking `Expect predicate `existsNoRetry == 1` for object "showOriginal" Button`
+    t =    33.82s         Checking existence of `"showOriginal" Button`
+    t =    34.02s Added attachment named 'shared-ticket-detail-image'
+    t =    34.02s Terminate io.github.publit.app:43022
+    t =    35.05s Open io.github.publit.app
+    t =    35.05s     Launch io.github.publit.app
+    t =    35.58s         Setting up automation session
+    t =    37.05s         Wait for io.github.publit.app to idle
+    t =    39.44s Waiting 30.0s for "savePass" Button to exist
+    t =    40.49s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =    40.49s         Checking existence of `"savePass" Button`
+    t =    40.85s Checking existence of `"sharedTicketAdded" StaticText`
+    t =    40.93s Find the Window (First Match)
+    t =    40.94s Waiting 2.0s for "mapTicketFields" Button to exist
+    t =    41.95s     Checking `Expect predicate `existsNoRetry == 1` for object "mapTicketFields" Button`
+    t =    41.95s         Checking existence of `"mapTicketFields" Button`
+    t =    42.01s Find the "mapTicketFields" Button
+    t =    42.10s Press Window at {{0.0, 0.0}, {402.0, 874.0}}[0.50, 0.32] for 0.1 seconds, then drag to Window at {{0.0, 0.0}, {402.0, 874.0}}[0.50, 0.10] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =    42.10s     Wait for io.github.publit.app to idle
+    t =    42.10s     Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.11s     Check for interrupting elements affecting Window
+    t =    42.16s     Synthesize event
+    t =    42.17s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.18s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.20s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.22s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.23s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.92s     Wait for io.github.publit.app to idle
+    t =    42.93s Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    42.94s Waiting 2.0s for "mapTicketFields" Button to exist
+    t =    43.95s     Checking `Expect predicate `existsNoRetry == 1` for object "mapTicketFields" Button`
+    t =    43.95s         Checking existence of `"mapTicketFields" Button`
+    t =    44.04s Find the "mapTicketFields" Button
+    t =    44.14s Find the "mapTicketFields" Button
+    t =    44.37s Added attachment named 'shared-ticket-review-unique'
+    t =    44.37s Tap "savePass" Button
+    t =    44.37s     Wait for io.github.publit.app to idle
+    t =    44.37s     Find the "savePass" Button
+    t =    44.45s     Check for interrupting elements affecting "savePass" Button
+    t =    44.53s     Synthesize event
+    t =    44.84s     Wait for io.github.publit.app to idle
+    t =    44.89s Waiting 10.0s for "passCard" Button to exist
+    t =    45.90s     Checking `Expect predicate `existsNoRetry == 1` for object "passCard" Button`
+    t =    45.90s         Checking existence of `"passCard" Button`
+    t =    45.98s Tap "passCard" Button
+    t =    45.98s     Wait for io.github.publit.app to idle
+    t =    45.99s     Find the "passCard" Button
+    t =    46.07s     Check for interrupting elements affecting "passCard" Button
+    t =    46.11s     Synthesize event
+    t =    46.41s     Wait for io.github.publit.app to idle
+    t =    46.90s Waiting 10.0s for "showOriginal" Button to exist
+    t =    47.96s     Checking `Expect predicate `existsNoRetry == 1` for object "showOriginal" Button`
+    t =    47.96s         Checking existence of `"showOriginal" Button`
+    t =    48.17s Added attachment named 'shared-ticket-detail-unique'
+    t =    48.18s Terminate io.github.publit.app:44207
+    t =    49.24s Open io.github.publit.app
+    t =    49.24s     Launch io.github.publit.app
+    t =    49.71s         Setting up automation session
+    t =    51.56s         Wait for io.github.publit.app to idle
+    t =    53.92s Waiting 30.0s for "ticketPage-0" Button to exist
+    t =    54.92s     Checking `Expect predicate `existsNoRetry == 1` for object "ticketPage-0" Button`
+    t =    54.92s         Checking existence of `"ticketPage-0" Button`
+    t =    55.23s Added attachment named 'shared-ticket-pages'
+    t =    55.23s Tap "ticketPage-0" Button
+    t =    55.23s     Wait for io.github.publit.app to idle
+    t =    55.23s     Find the "ticketPage-0" Button
+    t =    55.33s     Check for interrupting elements affecting "ticketPage-0" Button
+    t =    55.39s     Synthesize event
+    t =    55.71s     Wait for io.github.publit.app to idle
+    t =    55.73s Waiting 30.0s for "savePass" Button to exist
+    t =    56.75s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =    56.75s         Checking existence of `"savePass" Button`
+    t =    56.89s Terminate io.github.publit.app:44980
+    t =    57.95s Open io.github.publit.app
+    t =    57.95s     Launch io.github.publit.app
+    t =    58.40s         Setting up automation session
+    t =    59.97s         Wait for io.github.publit.app to idle
+    t =    62.30s Waiting 30.0s for "savePass" Button to exist
+    t =    63.34s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =    63.34s         Checking existence of `"savePass" Button`
+    t =    63.69s Checking existence of `"sharedTicketAdded" StaticText`
+    t =    63.91s Added attachment named 'shared-ticket-review'
+    t =    63.91s Tap "Cancel" Button
+    t =    63.91s     Wait for io.github.publit.app to idle
+    t =    63.91s     Find the "Cancel" Button
+    t =    63.96s     Check for interrupting elements affecting "Cancel" Button
+    t =    64.02s     Synthesize event
+    t =    64.32s     Wait for io.github.publit.app to idle
+    t =    64.77s Tear Down
+    t =    64.89s     Added attachment named 'failed-testF16SharedTicketImport'
+TIMING: -[PublitUITests testF16SharedTicketImport] 64 s
+Test Case '-[PublitUITests.PublitUITests testF16SharedTicketImport]' passed (65.335 seconds).
+Test Case '-[PublitUITests.PublitUITests testF17TicketFieldReview]' started.
+    t =     0.00s Start Test at 2026-10-17 13:47:32.495
+    t =     0.07s Set Up
+    t =     0.07s Open io.github.publit.app
+    t =     0.07s     Launch io.github.publit.app
+    t =     0.07s         Terminate io.github.publit.app:45390
+    t =     1.59s         Setting up automation session
+    t =     4.41s         Wait for io.github.publit.app to idle
+    t =     6.83s Waiting 30.0s for "savePass" Button to exist
+    t =     7.85s     Checking `Expect predicate `existsNoRetry == 1` for object "savePass" Button`
+    t =     7.85s         Checking existence of `"savePass" Button`
+    t =     8.19s Find the Window (First Match)
+    t =     8.23s Waiting 2.0s for "mapTicketFields" Button to exist
+    t =     9.25s     Checking `Expect predicate `existsNoRetry == 1` for object "mapTicketFields" Button`
+    t =     9.25s         Checking existence of `"mapTicketFields" Button`
+    t =     9.31s Find the "mapTicketFields" Button
+    t =     9.39s Press Window at {{0.0, 0.0}, {402.0, 874.0}}[0.50, 0.32] for 0.1 seconds, then drag to Window at {{0.0, 0.0}, {402.0, 874.0}}[0.50, 0.10] with velocity of 500.00 pixels per second, and then hold for 0.0 seconds 
+    t =     9.39s     Wait for io.github.publit.app to idle
+    t =     9.39s     Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     9.41s     Check for interrupting elements affecting Window
+    t =     9.49s     Synthesize event
+    t =     9.49s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     9.52s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     9.53s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     9.54s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =     9.56s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    10.25s     Wait for io.github.publit.app to idle
+    t =    10.26s Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    10.27s Waiting 2.0s for "mapTicketFields" Button to exist
+    t =    11.30s     Checking `Expect predicate `existsNoRetry == 1` for object "mapTicketFields" Button`
+    t =    11.30s         Checking existence of `"mapTicketFields" Button`
+    t =    11.40s Find the "mapTicketFields" Button
+    t =    11.50s Find the "mapTicketFields" Button
+    t =    11.60s Tap "mapTicketFields" Button
+    t =    11.60s     Wait for io.github.publit.app to idle
+    t =    11.60s     Find the "mapTicketFields" Button
+    t =    11.69s     Check for interrupting elements affecting "mapTicketFields" Button
+    t =    11.76s     Synthesize event
+    t =    12.06s     Wait for io.github.publit.app to idle
+    t =    12.10s Waiting 20.0s for Button (First Match) to exist
+    t =    13.11s     Checking `Expect predicate `existsNoRetry == 1` for object Button (First Match)`
+    t =    13.12s         Checking existence of `Button (First Match)`
+    t =    13.26s Waiting 4.0s for Button (First Match) to exist
+    t =    14.31s     Checking `Expect predicate `existsNoRetry == 1` for object Button (First Match)`
+    t =    14.31s         Checking existence of `Button (First Match)`
+    t =    14.50s Find the Button (First Match)
+    t =    14.63s Find the "ticketText-0" Button
+    t =    14.83s Find the "ticketText-0" Button
+    t =    15.04s Find the "ticketText-0" Button
+    t =    15.21s Find the "ticketText-0" Button
+    t =    15.37s Find the "ticketText-0" Button
+    t =    15.50s Find the "ticketText-0" Button
+    t =    15.62s Find the "ticketText-0" Button
+    t =    15.74s Find the "ticketText-0" Button
+    t =    15.87s Find the "ticketText-0" Button
+    t =    16.00s Find the "ticketText-0" Button
+    t =    16.14s Tap "ticketText-0" Button
+    t =    16.14s     Wait for io.github.publit.app to idle
+    t =    16.14s     Find the "ticketText-0" Button
+    t =    16.27s     Check for interrupting elements affecting "ticketText-0" Button
+    t =    16.38s     Synthesize event
+    t =    16.68s     Wait for io.github.publit.app to idle
+    t =    16.73s Checking existence of `"ticketMappingText" TextField`
+    t =    17.12s Tap "ticketField-title" Button
+    t =    17.12s     Wait for io.github.publit.app to idle
+    t =    17.24s     Find the "ticketField-title" Button
+    t =    17.38s     Check for interrupting elements affecting "ticketField-title" Button
+    t =    17.50s     Synthesize event
+    t =    17.80s     Wait for io.github.publit.app to idle
+    t =    18.34s Added attachment named 'ticket-field-mapper'
+    t =    18.35s Tap "Done" Button
+    t =    18.35s     Wait for io.github.publit.app to idle
+    t =    18.36s     Find the "Done" Button
+    t =    18.43s     Check for interrupting elements affecting "Done" Button
+    t =    18.53s     Synthesize event
+    t =    18.82s     Wait for io.github.publit.app to idle
+    t =    19.27s Checking existence of `"savePass" Button`
+    t =    19.36s Tap "Cancel" Button
+    t =    19.36s     Wait for io.github.publit.app to idle
+    t =    19.36s     Find the "Cancel" Button
+    t =    19.42s     Check for interrupting elements affecting "Cancel" Button
+    t =    19.49s     Synthesize event
+    t =    19.81s     Wait for io.github.publit.app to idle
+    t =    20.24s Checking existence of `"savePass" Button`
+    t =    20.32s Tear Down
+    t =    20.46s     Added attachment named 'failed-testF17TicketFieldReview'
+TIMING: -[PublitUITests testF17TicketFieldReview] 20 s
+Test Case '-[PublitUITests.PublitUITests testF17TicketFieldReview]' passed (20.713 seconds).
+Test Case '-[PublitUITests.PublitUITests testF18FarStopIsShownWithWalk]' started.
+    t =     0.00s Start Test at 2026-10-17 13:47:53.207
+    t =     0.03s Set Up
+    t =     0.03s Setting simulated location to <+45.45600000,+12.46000000> +/- 0.00m (speed -1.00 mps / course -1.00) @ 10/17/26, 1:47:53 PM Greenwich Mean Time
+    t =     0.04s Open io.github.publit.app
+    t =     0.04s     Launch io.github.publit.app
+    t =     0.04s         Terminate io.github.publit.app:45681
+    t =     1.95s         Setting up automation session
+    t =     3.32s         Wait for io.github.publit.app to idle
+    t =     5.83s Tap Target Application 'io.github.publit.app'[0.50, 0.01]
+    t =     5.83s     Wait for io.github.publit.app to idle
+    t =     5.83s     Find the Target Application 'io.github.publit.app'
+    t =     6.14s     Check for interrupting elements affecting "Publit" Application
+    t =     6.50s     Synthesize event
+    t =     6.54s         Find the Target Application 'io.github.publit.app'
+    t =     6.62s         Find the Target Application 'io.github.publit.app'
+    t =     6.70s         Find the Target Application 'io.github.publit.app'
+    t =     7.24s     Wait for io.github.publit.app to idle
+    t =     7.25s Waiting 10.0s for "Nearby" NavigationBar to exist
+    t =     8.25s     Checking `Expect predicate `existsNoRetry == 1` for object "Nearby" NavigationBar`
+    t =     8.25s         Checking existence of `"Nearby" NavigationBar`
+    t =     8.37s Waiting 45.0s for "nearbyFarNote" Any to exist
+    t =     9.39s     Checking `Expect predicate `existsNoRetry == 1` for object "nearbyFarNote" Any`
+    t =     9.39s         Checking existence of `"nearbyFarNote" Any`
+    t =     9.47s Find the "nearbyFarNote" Any
+    t =     9.56s Waiting 10.0s for "departureRow" Any to exist
+    t =    10.61s     Checking `Expect predicate `existsNoRetry == 1` for object "departureRow" Any`
+    t =    10.61s         Checking existence of `"departureRow" Any`
+    t =    11.02s Checking existence of `"No departures nearby" StaticText`
+    t =    11.24s Added attachment named 'nearby-far'
+    t =    11.25s Setting simulated location to <+48.13715000,+11.57540000> +/- 0.00m (speed -1.00 mps / course -1.00) @ 10/17/26, 1:48:04 PM Greenwich Mean Time
+    t =    11.25s Tear Down
+    t =    11.38s     Added attachment named 'failed-testF18FarStopIsShownWithWalk'
+TIMING: -[PublitUITests testF18FarStopIsShownWithWalk] 11 s
+Test Case '-[PublitUITests.PublitUITests testF18FarStopIsShownWithWalk]' passed (11.598 seconds).
+Test Case '-[PublitUITests.PublitUITests testF19DropPinOnMap]' started.
+    t =     0.00s Start Test at 2026-10-17 13:48:04.806
+    t =     0.03s Set Up
+    t =     0.03s Open io.github.publit.app
+    t =     0.03s     Launch io.github.publit.app
+    t =     0.03s         Terminate io.github.publit.app:46542
+    t =     1.33s         Setting up automation session
+    t =     3.26s         Wait for io.github.publit.app to idle
+    t =     5.59s Tap Target Application 'io.github.publit.app'[0.50, 0.01]
+    t =     5.59s     Wait for io.github.publit.app to idle
+    t =     5.60s     Find the Target Application 'io.github.publit.app'
+    t =     5.93s     Check for interrupting elements affecting "Publit" Application
+    t =     6.02s     Synthesize event
+    t =     6.03s         Find the Target Application 'io.github.publit.app'
+    t =     6.10s         Find the Target Application 'io.github.publit.app'
+    t =     6.16s         Find the Target Application 'io.github.publit.app'
+    t =     6.50s     Wait for io.github.publit.app to idle
+    t =     6.51s Waiting 10.0s for "Station map" Button to exist
+    t =     7.52s     Checking `Expect predicate `existsNoRetry == 1` for object "Station map" Button`
+    t =     7.52s         Checking existence of `"Station map" Button`
+    t =     7.63s Tap "Station map" Button
+    t =     7.63s     Wait for io.github.publit.app to idle
+    t =     7.63s     Find the "Station map" Button
+    t =     7.71s     Check for interrupting elements affecting "Station map" Button
+    t =     7.78s     Synthesize event
+    t =     8.11s     Wait for io.github.publit.app to idle
+    t =     8.75s Waiting 10.0s for "Stations" NavigationBar to exist
+    t =     9.78s     Checking `Expect predicate `existsNoRetry == 1` for object "Stations" NavigationBar`
+    t =     9.78s         Checking existence of `"Stations" NavigationBar`
+    t =    13.71s Press Window (First Match)[0.30, 0.60] for 1.0 seconds
+    t =    13.71s     Wait for io.github.publit.app to idle
+    t =    14.86s     Find the Window (First Match)
+    t =    14.89s     Check for interrupting elements affecting Window
+    t =    15.77s     Synthesize event
+    t =    15.79s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    15.93s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    16.02s         Find the Window at {{0.0, 0.0}, {402.0, 874.0}}
+    t =    17.28s     Wait for io.github.publit.app to idle
+    t =    19.08s Waiting 10.0s for "mapPlaceRoute" Button to exist
+    t =    20.10s     Checking `Expect predicate `existsNoRetry == 1` for object "mapPlaceRoute" Button`
+    t =    20.10s         Checking existence of `"mapPlaceRoute" Button`
+    t =    21.11s Checking existence of `"mapPlaceRouteFrom" Button`
+    t =    21.92s Added attachment named 'map-dropped-pin'
+    t =    21.93s Tap "mapPlaceRoute" Button
+    t =    21.93s     Wait for io.github.publit.app to idle
+    t =    25.60s     Find the "mapPlaceRoute" Button
+    t =    26.24s     Check for interrupting elements affecting "mapPlaceRoute" Button
+    t =    27.01s     Synthesize event
+    t =    27.35s     Wait for io.github.publit.app to idle
+    t =    29.32s Waiting 10.0s for NavigationBar (Descendants matching type NavigationBar) to exist
+    t =    30.37s     Checking `Expect predicate `existsNoRetry == 1` for object NavigationBar (Descendants matching type NavigationBar)`
+    t =    30.37s         Checking existence of `NavigationBar (Descendants matching type NavigationBar)`
+    t =    30.77s Tear Down
+    t =    30.98s     Added attachment named 'failed-testF19DropPinOnMap'
+TIMING: -[PublitUITests testF19DropPinOnMap] 30 s
+Test Case '-[PublitUITests.PublitUITests testF19DropPinOnMap]' passed (31.620 seconds).
+Test Case '-[PublitUITests.PublitUITests testF20PastedMapLinkIsAPlace]' started.
+    t =     0.00s Start Test at 2026-10-17 13:48:36.426
+    t =     0.03s Set Up
+    t =     0.04s Open io.github.publit.app
+    t =     0.04s     Launch io.github.publit.app
+    t =     0.04s         Terminate io.github.publit.app:47159
+    t =     1.89s         Setting up automation session
+    t =     3.30s         Wait for io.github.publit.app to idle
+    t =     5.51s Waiting 10.0s for "endpoint-to" Button to exist
+    t =     6.52s     Checking `Expect predicate `existsNoRetry == 1` for object "endpoint-to" Button`
+    t =     6.52s         Checking existence of `"endpoint-to" Button`
+    t =     6.80s Tap "endpoint-to" Button
+    t =     6.80s     Wait for io.github.publit.app to idle
+    t =     6.80s     Find the "endpoint-to" Button
+    t =     6.88s     Check for interrupting elements affecting "endpoint-to" Button
+    t =     6.94s     Synthesize event
+    t =     7.28s     Wait for io.github.publit.app to idle
+    t =     7.66s Waiting 5.0s for SearchField (First Match) to exist
+    t =     8.69s     Checking `Expect predicate `existsNoRetry == 1` for object SearchField (First Match)`
+    t =     8.69s         Checking existence of `SearchField (First Match)`
+    t =     8.75s Tap SearchField (First Match)
+    t =     8.75s     Wait for io.github.publit.app to idle
+    t =     8.76s     Find the SearchField (First Match)
+    t =     8.80s     Check for interrupting elements affecting "Address, stop or place" SearchField
+    t =     8.90s     Synthesize event
+    t =     9.20s     Wait for io.github.publit.app to idle
+    t =    10.29s Type 'https://www.google...' into "Address, stop or place" SearchField
+    t =    10.29s     Wait for io.github.publit.app to idle
+    t =    10.30s     Find the "Address, stop or place" SearchField
+    t =    10.86s     Check for interrupting elements affecting "Address, stop or place" SearchField
+    t =    10.97s     Synthesize event
+    t =    12.03s     Wait for io.github.publit.app to idle
+    t =    12.03s Waiting 15.0s for Button (First Match) to exist
+    t =    13.07s     Checking `Expect predicate `existsNoRetry == 1` for object Button (First Match)`
+    t =    13.07s         Checking existence of `Button (First Match)`
+    t =    13.46s Added attachment named 'search-map-link'
+    t =    13.47s Tear Down
+    t =    13.60s     Added attachment named 'failed-testF20PastedMapLinkIsAPlace'
+TIMING: -[PublitUITests testF20PastedMapLinkIsAPlace] 13 s
+Test Case '-[PublitUITests.PublitUITests testF20PastedMapLinkIsAPlace]' passed (13.881 seconds).
+Test Suite 'PublitUITests' passed at 2026-10-17 13:48:50.308.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 673.952 (673.966) seconds
+Test Suite 'PublitUITests.xctest' passed at 2026-10-17 13:48:50.309.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 673.952 (673.967) seconds
+Test Suite 'All tests' passed at 2026-10-17 13:48:50.309.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 673.952 (673.978) seconds
+2026-10-17 13:48:52.079 xcodebuild[15479:48455] [MT] IDETestOperationsObserverDebug: 696.659 elapsed -- Testing started completed.
+2026-10-17 13:48:52.079 xcodebuild[15479:48455] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-17 13:48:52.079 xcodebuild[15479:48455] [MT] IDETestOperationsObserverDebug: 696.659 sec, +696.659 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/Publit/Publit/build/Logs/Test/Test-Publit-2026.10.17_13-37-15-+0000.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

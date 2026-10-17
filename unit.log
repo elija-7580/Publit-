@@ -1,0 +1,400 @@
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.012) seconds
+Test Suite 'RequestPrivacyTests' started at 2026-10-17 13:36:58.002.
+Test Case '-[PublitTests.RequestPrivacyTests testCoordinatesAreRoundedForRequests]' started.
+Test Case '-[PublitTests.RequestPrivacyTests testCoordinatesAreRoundedForRequests]' passed (0.001 seconds).
+Test Case '-[PublitTests.RequestPrivacyTests testSearchBiasIsTheSameAroundOnePlace]' started.
+Test Case '-[PublitTests.RequestPrivacyTests testSearchBiasIsTheSameAroundOnePlace]' passed (0.001 seconds).
+Test Suite 'RequestPrivacyTests' passed at 2026-10-17 13:36:58.004.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ResourceUseTests' started at 2026-10-17 13:36:58.004.
+Test Case '-[PublitTests.ResourceUseTests testConstrainedEnergyDoublesScreenRefreshes]' started.
+Test Case '-[PublitTests.ResourceUseTests testConstrainedEnergyDoublesScreenRefreshes]' passed (0.002 seconds).
+Test Case '-[PublitTests.ResourceUseTests testDecodedAnswerIsKeptWithTheMemoryCopy]' started.
+Test Case '-[PublitTests.ResourceUseTests testDecodedAnswerIsKeptWithTheMemoryCopy]' passed (0.001 seconds).
+Test Case '-[PublitTests.ResourceUseTests testLiveAnswersAreWrittenToDiskAtMostEveryInterval]' started.
+Test Case '-[PublitTests.ResourceUseTests testLiveAnswersAreWrittenToDiskAtMostEveryInterval]' passed (0.002 seconds).
+Test Case '-[PublitTests.ResourceUseTests testReleasingMemoryKeepsOnlyTheNewestBytes]' started.
+Test Case '-[PublitTests.ResourceUseTests testReleasingMemoryKeepsOnlyTheNewestBytes]' passed (0.001 seconds).
+Test Case '-[PublitTests.ResourceUseTests testSessionStepsAreWrittenOnFlush]' started.
+Test Case '-[PublitTests.ResourceUseTests testSessionStepsAreWrittenOnFlush]' passed (0.011 seconds).
+Test Suite 'ResourceUseTests' passed at 2026-10-17 13:36:58.022.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.017 (0.018) seconds
+Test Suite 'ResponseCacheBoundsTests' started at 2026-10-17 13:36:58.022.
+Test Case '-[PublitTests.ResponseCacheBoundsTests testMemoryStaysBelowByteLimitAndKeepsNewest]' started.
+Test Case '-[PublitTests.ResponseCacheBoundsTests testMemoryStaysBelowByteLimitAndKeepsNewest]' passed (0.001 seconds).
+Test Suite 'ResponseCacheBoundsTests' passed at 2026-10-17 13:36:58.024.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ResponseCacheWriteTests' started at 2026-10-17 13:36:58.024.
+Test Case '-[PublitTests.ResponseCacheWriteTests testDiskCopyIsReadableRightAfterStoring]' started.
+Test Case '-[PublitTests.ResponseCacheWriteTests testDiskCopyIsReadableRightAfterStoring]' passed (0.014 seconds).
+Test Suite 'ResponseCacheWriteTests' passed at 2026-10-17 13:36:58.087.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.014 (0.064) seconds
+Test Suite 'RouteFromStopTests' started at 2026-10-17 13:36:58.088.
+Test Case '-[PublitTests.RouteFromStopTests testClearingDestinationNeedsSearchAgain]' started.
+Test Case '-[PublitTests.RouteFromStopTests testClearingDestinationNeedsSearchAgain]' passed (0.001 seconds).
+Test Case '-[PublitTests.RouteFromStopTests testRouteFromAndToSameStopNeverBothEnds]' started.
+Test Case '-[PublitTests.RouteFromStopTests testRouteFromAndToSameStopNeverBothEnds]' passed (0.001 seconds).
+Test Case '-[PublitTests.RouteFromStopTests testRouteFromStopKeepsOtherDestinationAndOpensPlan]' started.
+Test Case '-[PublitTests.RouteFromStopTests testRouteFromStopKeepsOtherDestinationAndOpensPlan]' passed (0.001 seconds).
+Test Suite 'RouteFromStopTests' passed at 2026-10-17 13:36:58.091.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'RouteOptionsTests' started at 2026-10-17 13:36:58.093.
+Test Case '-[PublitTests.RouteOptionsTests testDefaultsAskForTheComparisonOnly]' started.
+Test Case '-[PublitTests.RouteOptionsTests testDefaultsAskForTheComparisonOnly]' passed (0.001 seconds).
+Test Case '-[PublitTests.RouteOptionsTests testFiltersBecomeQueryParameters]' started.
+Test Case '-[PublitTests.RouteOptionsTests testFiltersBecomeQueryParameters]' passed (0.001 seconds).
+Test Case '-[PublitTests.RouteOptionsTests testOptionsChangeTheQueryKey]' started.
+Test Case '-[PublitTests.RouteOptionsTests testOptionsChangeTheQueryKey]' passed (0.001 seconds).
+Test Case '-[PublitTests.RouteOptionsTests testStoredBetweenLaunches]' started.
+Test Case '-[PublitTests.RouteOptionsTests testStoredBetweenLaunches]' passed (0.017 seconds).
+Test Case '-[PublitTests.RouteOptionsTests testStreetComparisonAsksForStreetsOnly]' started.
+Test Case '-[PublitTests.RouteOptionsTests testStreetComparisonAsksForStreetsOnly]' passed (0.001 seconds).
+Test Suite 'RouteOptionsTests' passed at 2026-10-17 13:36:58.114.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.020 (0.021) seconds
+Test Suite 'SavedLineTests' started at 2026-10-17 13:36:58.114.
+Test Case '-[PublitTests.SavedLineTests testSaveLineAtStopAndMatchDepartures]' started.
+Test Case '-[PublitTests.SavedLineTests testSaveLineAtStopAndMatchDepartures]' passed (0.016 seconds).
+Test Suite 'SavedLineTests' passed at 2026-10-17 13:36:58.131.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.016 (0.016) seconds
+Test Suite 'SavedTripEqualityTests' started at 2026-10-17 13:36:58.131.
+Test Case '-[PublitTests.SavedTripEqualityTests testFollowLiveCountsAsAChange]' started.
+Test Case '-[PublitTests.SavedTripEqualityTests testFollowLiveCountsAsAChange]' passed (0.002 seconds).
+Test Suite 'SavedTripEqualityTests' passed at 2026-10-17 13:36:58.133.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'ServerFailoverTests' started at 2026-10-17 13:36:58.134.
+Test Case '-[PublitTests.ServerFailoverTests testBackupFirstForAWhileAfterAFailure]' started.
+Test Case '-[PublitTests.ServerFailoverTests testBackupFirstForAWhileAfterAFailure]' passed (0.001 seconds).
+Test Case '-[PublitTests.ServerFailoverTests testBackupKeepsPathAndQuery]' started.
+Test Case '-[PublitTests.ServerFailoverTests testBackupKeepsPathAndQuery]' passed (0.004 seconds).
+Test Case '-[PublitTests.ServerFailoverTests testOnlyServerProblemsFailOver]' started.
+Test Case '-[PublitTests.ServerFailoverTests testOnlyServerProblemsFailOver]' passed (0.001 seconds).
+Test Suite 'ServerFailoverTests' passed at 2026-10-17 13:36:58.140.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'SharedPlaceTests' started at 2026-10-17 13:36:58.140.
+Test Case '-[PublitTests.SharedPlaceTests testAppleMapsOsmGeoAndPlainCoordinates]' started.
+Test Case '-[PublitTests.SharedPlaceTests testAppleMapsOsmGeoAndPlainCoordinates]' passed (0.003 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testCoordinatesInAGoogleMapsPage]' started.
+Test Case '-[PublitTests.SharedPlaceTests testCoordinatesInAGoogleMapsPage]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testGooglePlaceLinkUsesThePin]' started.
+Test Case '-[PublitTests.SharedPlaceTests testGooglePlaceLinkUsesThePin]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testGoogleQueryAndDirectionsLinks]' started.
+Test Case '-[PublitTests.SharedPlaceTests testGoogleQueryAndDirectionsLinks]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testGoogleShortLinkWithNameIsFollowedLater]' started.
+Test Case '-[PublitTests.SharedPlaceTests testGoogleShortLinkWithNameIsFollowedLater]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testLidoCircleLineIsCircular]' started.
+Test Case '-[PublitTests.SharedPlaceTests testLidoCircleLineIsCircular]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testOrdinaryDirectionsAreNotCircular]' started.
+Test Case '-[PublitTests.SharedPlaceTests testOrdinaryDirectionsAreNotCircular]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedPlaceTests testSharedPlaceOpensRoutesThroughADeepLink]' started.
+Test Case '-[PublitTests.SharedPlaceTests testSharedPlaceOpensRoutesThroughADeepLink]' passed (0.001 seconds).
+Test Suite 'SharedPlaceTests' passed at 2026-10-17 13:36:58.153.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.008 (0.013) seconds
+Test Suite 'SharedTicketPolicyTests' started at 2026-10-17 13:36:58.154.
+Test Case '-[PublitTests.SharedTicketPolicyTests testAdvertisementAndWebsiteQRNeedReview]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testAdvertisementAndWebsiteQRNeedReview]' passed (0.137 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testFileHandoffOpensTicketsWithoutBreakingDeepLinks]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testFileHandoffOpensTicketsWithoutBreakingDeepLinks]' passed (0.002 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testFingerprintIncludesDocumentAndPage]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testFingerprintIncludesDocumentAndPage]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testLabelledValidityAndExpiredTicketsArePreserved]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testLabelledValidityAndExpiredTicketsArePreserved]' passed (0.011 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testOldDocumentsDecodeWithoutFingerprint]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testOldDocumentsDecodeWithoutFingerprint]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testRecognizablePageDoesNotInventDates]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testRecognizablePageDoesNotInventDates]' passed (0.012 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testRemoteDocumentDoesNotGetDownloaded]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testRemoteDocumentDoesNotGetDownloaded]' passed (0.001 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testReversedLabelledValidityNeedsReview]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testReversedLabelledValidityNeedsReview]' passed (0.003 seconds).
+Test Case '-[PublitTests.SharedTicketPolicyTests testUnlabelledDatesAreNotAutomaticValidity]' started.
+Test Case '-[PublitTests.SharedTicketPolicyTests testUnlabelledDatesAreNotAutomaticValidity]' passed (0.005 seconds).
+Test Suite 'SharedTicketPolicyTests' passed at 2026-10-17 13:36:58.328.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.172 (0.174) seconds
+Test Suite 'SharedTicketStoreTests' started at 2026-10-17 13:36:58.328.
+Test Case '-[PublitTests.SharedTicketStoreTests testCancelledShareDoesNotSave]' started.
+Test Case '-[PublitTests.SharedTicketStoreTests testCancelledShareDoesNotSave]' passed (0.004 seconds).
+Test Case '-[PublitTests.SharedTicketStoreTests testConcurrentSharesDoNotDuplicate]' started.
+Test Case '-[PublitTests.SharedTicketStoreTests testConcurrentSharesDoNotDuplicate]' passed (0.006 seconds).
+Test Case '-[PublitTests.SharedTicketStoreTests testRepeatedShareIsIdempotentAndOriginalIsUnchanged]' started.
+Test Case '-[PublitTests.SharedTicketStoreTests testRepeatedShareIsIdempotentAndOriginalIsUnchanged]' passed (0.004 seconds).
+Test Suite 'SharedTicketStoreTests' passed at 2026-10-17 13:36:58.343.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.014 (0.015) seconds
+Test Suite 'StabilityRegressionTests' started at 2026-10-17 13:36:58.343.
+Test Case '-[PublitTests.StabilityRegressionTests testFirstMileIsSavedAndChangesTheSearch]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testFirstMileIsSavedAndChangesTheSearch]' passed (0.001 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testFirstMileQueryKeepsWalkingAndAddsChosenMode]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testFirstMileQueryKeepsWalkingAndAddsChosenMode]' passed (0.002 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testMalformedPolylineCannotOverflowOrCreateInvalidCoordinates]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testMalformedPolylineCannotOverflowOrCreateInvalidCoordinates]' passed (0.003 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testMapCacheReusesContainedBoundsButNotMissingDetailOrExpiredData]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testMapCacheReusesContainedBoundsButNotMissingDetailOrExpiredData]' passed (0.011 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testMapSharingSnapshotIsBoundedAndAvailable]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testMapSharingSnapshotIsBoundedAndAvailable]' passed (0.002 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testNearbyCacheReuseDoesNotCrossFiltersOrParameters]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testNearbyCacheReuseDoesNotCrossFiltersOrParameters]' passed (0.001 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testQueuedMetadataWriteReportsItsResult]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testQueuedMetadataWriteReportsItsResult]' passed (0.005 seconds).
+Test Case '-[PublitTests.StabilityRegressionTests testTicketMetadataFailureIsSurfacedWithoutAGhostTicket]' started.
+Test Case '-[PublitTests.StabilityRegressionTests testTicketMetadataFailureIsSurfacedWithoutAGhostTicket]' passed (0.003 seconds).
+Test Suite 'StabilityRegressionTests' passed at 2026-10-17 13:36:58.373.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.027 (0.029) seconds
+Test Suite 'StableDepartureIdentityTests' started at 2026-10-17 13:36:58.373.
+Test Case '-[PublitTests.StableDepartureIdentityTests testANewDelayKeepsTheRowIdentity]' started.
+Test Case '-[PublitTests.StableDepartureIdentityTests testANewDelayKeepsTheRowIdentity]' passed (0.003 seconds).
+Test Case '-[PublitTests.StableDepartureIdentityTests testRepeatedDeparturesAppearOnce]' started.
+Test Case '-[PublitTests.StableDepartureIdentityTests testRepeatedDeparturesAppearOnce]' passed (0.001 seconds).
+Test Suite 'StableDepartureIdentityTests' passed at 2026-10-17 13:36:58.377.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.004 (0.005) seconds
+Test Suite 'StreetComparisonTests' started at 2026-10-17 13:36:58.378.
+Test Case '-[PublitTests.StreetComparisonTests testCarAndBikeNeverJoinTheRouteList]' started.
+Test Case '-[PublitTests.StreetComparisonTests testCarAndBikeNeverJoinTheRouteList]' passed (0.007 seconds).
+Test Case '-[PublitTests.StreetComparisonTests testWalkBikeAndCarInThatOrder]' started.
+Test Case '-[PublitTests.StreetComparisonTests testWalkBikeAndCarInThatOrder]' passed (0.006 seconds).
+Test Suite 'StreetComparisonTests' passed at 2026-10-17 13:36:58.391.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.013 (0.013) seconds
+Test Suite 'TicketFieldMappingTests' started at 2026-10-17 13:36:58.391.
+Test Case '-[PublitTests.TicketFieldMappingTests testAssignedDayCoversTheWholeDay]' started.
+Test Case '-[PublitTests.TicketFieldMappingTests testAssignedDayCoversTheWholeDay]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketFieldMappingTests testAssignedRangeAndExplicitTimes]' started.
+Test Case '-[PublitTests.TicketFieldMappingTests testAssignedRangeAndExplicitTimes]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketFieldMappingTests testEmptyAndUnreadableAssignmentsDoNotEraseExistingValues]' started.
+Test Case '-[PublitTests.TicketFieldMappingTests testEmptyAndUnreadableAssignmentsDoNotEraseExistingValues]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketFieldMappingTests testEveryTextFieldIsExplicitAndPreservesEverythingElse]' started.
+Test Case '-[PublitTests.TicketFieldMappingTests testEveryTextFieldIsExplicitAndPreservesEverythingElse]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketFieldMappingTests testWholeMonthAndDaylightSaving]' started.
+Test Case '-[PublitTests.TicketFieldMappingTests testWholeMonthAndDaylightSaving]' passed (0.002 seconds).
+Test Suite 'TicketFieldMappingTests' passed at 2026-10-17 13:36:58.397.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.006) seconds
+Test Suite 'TicketLinkTests' started at 2026-10-17 13:36:58.397.
+Test Case '-[PublitTests.TicketLinkTests testLinkForShortOperatorNameAppliesToSubsidiaries]' started.
+Test Case '-[PublitTests.TicketLinkTests testLinkForShortOperatorNameAppliesToSubsidiaries]' passed (0.002 seconds).
+Test Case '-[PublitTests.TicketLinkTests testOperatorWebsiteFromFeed]' started.
+Test Case '-[PublitTests.TicketLinkTests testOperatorWebsiteFromFeed]' passed (0.003 seconds).
+Test Case '-[PublitTests.TicketLinkTests testURLParsing]' started.
+Test Case '-[PublitTests.TicketLinkTests testURLParsing]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketLinkTests testUserLinkedAppWins]' started.
+Test Case '-[PublitTests.TicketLinkTests testUserLinkedAppWins]' passed (0.003 seconds).
+Test Suite 'TicketLinkTests' passed at 2026-10-17 13:36:58.407.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'TicketLogoTests' started at 2026-10-17 13:36:58.407.
+Test Case '-[PublitTests.TicketLogoTests testCandidatesUseCommonsPNGAndWebsiteIcon]' started.
+Test Case '-[PublitTests.TicketLogoTests testCandidatesUseCommonsPNGAndWebsiteIcon]' passed (0.003 seconds).
+Test Case '-[PublitTests.TicketLogoTests testCurrentLogoComesFirst]' started.
+Test Case '-[PublitTests.TicketLogoTests testCurrentLogoComesFirst]' passed (0.015 seconds).
+Test Case '-[PublitTests.TicketLogoTests testKnownOperatorSkipsTheSearch]' started.
+Test Case '-[PublitTests.TicketLogoTests testKnownOperatorSkipsTheSearch]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketLogoTests testOfflineLookupFallsBackToTheKnownWebsite]' started.
+Test Case '-[PublitTests.TicketLogoTests testOfflineLookupFallsBackToTheKnownWebsite]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketLogoTests testOldPassesWithoutLogoOrRegionStillLoad]' started.
+Test Case '-[PublitTests.TicketLogoTests testOldPassesWithoutLogoOrRegionStillLoad]' passed (0.010 seconds).
+Test Case '-[PublitTests.TicketLogoTests testRegionKeepsAQuietZoneInsideThePage]' started.
+Test Case '-[PublitTests.TicketLogoTests testRegionKeepsAQuietZoneInsideThePage]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketLogoTests testSearchHitsAreRead]' started.
+Test Case '-[PublitTests.TicketLogoTests testSearchHitsAreRead]' passed (0.002 seconds).
+Test Case '-[PublitTests.TicketLogoTests testUnknownOperatorIsSearched]' started.
+Test Case '-[PublitTests.TicketLogoTests testUnknownOperatorIsSearched]' passed (0.002 seconds).
+Test Case '-[PublitTests.TicketLogoTests testWalletRefusesCodesItCannotShow]' started.
+Test Case '-[PublitTests.TicketLogoTests testWalletRefusesCodesItCannotShow]' passed (0.007 seconds).
+Test Case '-[PublitTests.TicketLogoTests testWalletTakesOnlyItsFourFormats]' started.
+Test Case '-[PublitTests.TicketLogoTests testWalletTakesOnlyItsFourFormats]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketLogoTests testWebsiteIconDomain]' started.
+Test Case '-[PublitTests.TicketLogoTests testWebsiteIconDomain]' passed (0.001 seconds).
+Test Suite 'TicketLogoTests' passed at 2026-10-17 13:36:58.455.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.042 (0.048) seconds
+Test Suite 'TicketPassModelTests' started at 2026-10-17 13:36:58.455.
+Test Case '-[PublitTests.TicketPassModelTests testBinaryCodeSurvivesWalletEncoding]' started.
+Test Case '-[PublitTests.TicketPassModelTests testBinaryCodeSurvivesWalletEncoding]' passed (0.001 seconds).
+Test Case '-[PublitTests.TicketPassModelTests testStylesAreLegible]' started.
+Test Case '-[PublitTests.TicketPassModelTests testStylesAreLegible]' passed (0.002 seconds).
+Test Case '-[PublitTests.TicketPassModelTests testValidityAndGrouping]' started.
+Test Case '-[PublitTests.TicketPassModelTests testValidityAndGrouping]' passed (0.001 seconds).
+Test Suite 'TicketPassModelTests' passed at 2026-10-17 13:36:58.459.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'TicketRecognitionTests' started at 2026-10-17 13:36:58.459.
+Test Case '-[PublitTests.TicketRecognitionTests testEmbeddedPDFTextProducesTicketDates]' started.
+2026-10-17 13:36:58.688517+0000 Publit[13759:44881] fopen failed for data file: errno = 2 (No such file or directory)
+2026-10-17 13:36:58.688709+0000 Publit[13759:44881] Errors found! Invalidating cache...
+2026-10-17 13:36:59.355560+0000 Publit[13759:44881] fopen failed for data file: errno = 2 (No such file or directory)
+2026-10-17 13:36:59.355779+0000 Publit[13759:44881] Errors found! Invalidating cache...
+Test Case '-[PublitTests.TicketRecognitionTests testEmbeddedPDFTextProducesTicketDates]' passed (1.850 seconds).
+Test Case '-[PublitTests.TicketRecognitionTests testImageIsRecognizedLocally]' started.
+2026-10-17 13:37:00.750732+0000 Publit[13759:45201] [e5rt] E5RT encountered an STL exception. msg = On-device compilation within a VM only supports CPU currently..
+2026-10-17 13:37:00.753812+0000 Publit[13759:45201] [Inference] e5rt_e5_compiler_compile failed: (11): OPERATION ERROR
+2026-10-17 13:37:00.754601+0000 Publit[13759:45201] [Inference] E5RTNetwork: unable to compile network: /Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Quagga.framework/Networks/anmd-model.espresso.net
+Test Case '-[PublitTests.TicketRecognitionTests testImageIsRecognizedLocally]' passed (2.760 seconds).
+Test Case '-[PublitTests.TicketRecognitionTests testMalformedDataFailsWithoutSaving]' started.
+CoreGraphics PDF has logged an error. Set environment variable "CG_PDF_VERBOSE" to learn more.
+2026-10-17 13:37:03.073829+0000 Publit[13759:45971] [Publit] CGImageSourceCreateThumbnailAtIndex:5277: *** ERROR: CGImageSourceCreateThumbnailAtIndex[0] - 'n/a ' - failed to create thumbnail [-50] {alw:1, abs: -1 tra:1 max:3200}
+Test Case '-[PublitTests.TicketRecognitionTests testMalformedDataFailsWithoutSaving]' passed (0.004 seconds).
+Test Case '-[PublitTests.TicketRecognitionTests testSelectableTextBoxesMatchTheUprightPage]' started.
+Test Case '-[PublitTests.TicketRecognitionTests testSelectableTextBoxesMatchTheUprightPage]' passed (2.555 seconds).
+Test Case '-[PublitTests.TicketRecognitionTests testUniquePageAndMultipleTicketAmbiguity]' started.
+Test Case '-[PublitTests.TicketRecognitionTests testUniquePageAndMultipleTicketAmbiguity]' passed (0.924 seconds).
+Test Suite 'TicketRecognitionTests' passed at 2026-10-17 13:37:06.554.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 8.093 (8.095) seconds
+Test Suite 'TicketStoreTests' started at 2026-10-17 13:37:06.555.
+Test Case '-[PublitTests.TicketStoreTests testPassesAndSingleTickets]' started.
+Test Case '-[PublitTests.TicketStoreTests testPassesAndSingleTickets]' passed (0.056 seconds).
+Test Suite 'TicketStoreTests' passed at 2026-10-17 13:37:06.611.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.056 (0.056) seconds
+Test Suite 'TicketTextParserTests' started at 2026-10-17 13:37:06.611.
+Test Case '-[PublitTests.TicketTextParserTests testClassesInMoreLanguages]' started.
+Test Case '-[PublitTests.TicketTextParserTests testClassesInMoreLanguages]' passed (0.010 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testDBTicketWithTimetableRowsTravellersAndDiscount]' started.
+Test Case '-[PublitTests.TicketTextParserTests testDBTicketWithTimetableRowsTravellersAndDiscount]' passed (0.048 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testEnglishArrowRouteAndTextualDate]' started.
+Test Case '-[PublitTests.TicketTextParserTests testEnglishArrowRouteAndTextualDate]' passed (0.007 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testFrenchTicket]' started.
+Test Case '-[PublitTests.TicketTextParserTests testFrenchTicket]' passed (0.010 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testGroupConditionsAreNotTravellers]' started.
+Test Case '-[PublitTests.TicketTextParserTests testGroupConditionsAreNotTravellers]' passed (0.006 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testIssuerFromUICBarcode]' started.
+Test Case '-[PublitTests.TicketTextParserTests testIssuerFromUICBarcode]' passed (0.002 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testItalianTicket]' started.
+Test Case '-[PublitTests.TicketTextParserTests testItalianTicket]' passed (0.007 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testLabelsOnTheirOwnLine]' started.
+Test Case '-[PublitTests.TicketTextParserTests testLabelsOnTheirOwnLine]' passed (0.007 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testMonthlyPassIgnoresBirthAndPurchaseDates]' started.
+Test Case '-[PublitTests.TicketTextParserTests testMonthlyPassIgnoresBirthAndPurchaseDates]' passed (0.006 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testMoreDateFormatsAndRanges]' started.
+Test Case '-[PublitTests.TicketTextParserTests testMoreDateFormatsAndRanges]' passed (0.016 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testOperatorNearestTheTopAndIssuerFirst]' started.
+Test Case '-[PublitTests.TicketTextParserTests testOperatorNearestTheTopAndIssuerFirst]' passed (0.005 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testPrices]' started.
+Test Case '-[PublitTests.TicketTextParserTests testPrices]' passed (0.009 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testRailTicketWithLabels]' started.
+Test Case '-[PublitTests.TicketTextParserTests testRailTicketWithLabels]' passed (0.006 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testRangeWithTimes]' started.
+Test Case '-[PublitTests.TicketTextParserTests testRangeWithTimes]' passed (0.003 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testReturnTicketAndLongValidityBecomesPeriod]' started.
+Test Case '-[PublitTests.TicketTextParserTests testReturnTicketAndLongValidityBecomesPeriod]' passed (0.005 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testReturnTicketCoversBothDays]' started.
+Test Case '-[PublitTests.TicketTextParserTests testReturnTicketCoversBothDays]' passed (0.003 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testShortOperatorNamesNeedWholeWords]' started.
+Test Case '-[PublitTests.TicketTextParserTests testShortOperatorNamesNeedWholeWords]' passed (0.003 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testStationNamesAreNotMonths]' started.
+Test Case '-[PublitTests.TicketTextParserTests testStationNamesAreNotMonths]' passed (0.003 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testValidityFromDuration]' started.
+Test Case '-[PublitTests.TicketTextParserTests testValidityFromDuration]' passed (0.013 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testViaAndArrowChains]' started.
+Test Case '-[PublitTests.TicketTextParserTests testViaAndArrowChains]' passed (0.008 seconds).
+Test Case '-[PublitTests.TicketTextParserTests testWholeMonth]' started.
+Test Case '-[PublitTests.TicketTextParserTests testWholeMonth]' passed (0.002 seconds).
+Test Suite 'TicketTextParserTests' passed at 2026-10-17 13:37:06.793.
+	 Executed 21 tests, with 0 failures (0 unexpected) in 0.179 (0.182) seconds
+Test Suite 'TransferRiskTests' started at 2026-10-17 13:37:06.793.
+Test Case '-[PublitTests.TransferRiskTests testDirectTripHasNoWarnings]' started.
+Test Case '-[PublitTests.TransferRiskTests testDirectTripHasNoWarnings]' passed (0.005 seconds).
+Test Case '-[PublitTests.TransferRiskTests testLiveFixtureHasNoFalseAlarms]' started.
+Test Case '-[PublitTests.TransferRiskTests testLiveFixtureHasNoFalseAlarms]' passed (0.017 seconds).
+Test Case '-[PublitTests.TransferRiskTests testMissedWhenWalkLongerThanGap]' started.
+Test Case '-[PublitTests.TransferRiskTests testMissedWhenWalkLongerThanGap]' passed (0.001 seconds).
+Test Case '-[PublitTests.TransferRiskTests testNoWarningForComfortableChange]' started.
+Test Case '-[PublitTests.TransferRiskTests testNoWarningForComfortableChange]' passed (0.001 seconds).
+Test Case '-[PublitTests.TransferRiskTests testTightWhenIncomingIsLateAndBufferSmall]' started.
+Test Case '-[PublitTests.TransferRiskTests testTightWhenIncomingIsLateAndBufferSmall]' passed (0.003 seconds).
+Test Suite 'TransferRiskTests' passed at 2026-10-17 13:37:06.821.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.027 (0.027) seconds
+Test Suite 'TransitEnhancementTests' started at 2026-10-17 13:37:06.821.
+Test Case '-[PublitTests.TransitEnhancementTests testAlertsDeduplicateAndRespectCommunicationAndImpactWindows]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testAlertsDeduplicateAndRespectCommunicationAndImpactWindows]' passed (0.001 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testAsyncTicketImportPreservesExactImageBytes]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testAsyncTicketImportPreservesExactImageBytes]' passed (0.004 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testConcurrentLiveRefreshesShareOneRequestAndFailuresCanRetry]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testConcurrentLiveRefreshesShareOneRequestAndFailuresCanRetry]' passed (0.099 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testFareEstimateDoesNotDoubleCountCoveredTransferLegs]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testFareEstimateDoesNotDoubleCountCoveredTransferLegs]' passed (0.014 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testFareEstimateRejectsChildOnlyAmbiguousAndUncoveredPrices]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testFareEstimateRejectsChildOnlyAmbiguousAndUncoveredPrices]' passed (0.014 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testGroupingPerformanceAndResultParity]' started.
+PERF grouping records=1200 legacy_ms=17.008 indexed_ms=8.634 ratio=1.97
+Test Case '-[PublitTests.TransitEnhancementTests testGroupingPerformanceAndResultParity]' passed (0.163 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testHistoryIsBoundedDeduplicatedPersistedAndClearable]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testHistoryIsBoundedDeduplicatedPersistedAndClearable]' passed (0.058 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testLineAndSpecificTrainIdentityAreSeparate]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testLineAndSpecificTrainIdentityAreSeparate]' passed (0.001 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testLiveBarShowsStartedTripOtherwiseTheSavedTripUnderWay]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testLiveBarShowsStartedTripOtherwiseTheSavedTripUnderWay]' passed (0.060 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testMissingColoursAreNeutralAndSmallTextHasAAContrast]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testMissingColoursAreNeutralAndSmallTextHasAAContrast]' passed (0.001 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testMissingDirectionIsNotReplacedWithAlightingStop]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testMissingDirectionIsNotReplacedWithAlightingStop]' passed (0.016 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testReplayingAnOldSearchGetsFreshDepartures]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testReplayingAnOldSearchGetsFreshDepartures]' passed (0.001 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testStartedTripIsPersistentAndOnlyOneTripIsActive]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testStartedTripIsPersistentAndOnlyOneTripIsActive]' passed (0.045 seconds).
+Test Case '-[PublitTests.TransitEnhancementTests testUnsavedTripStaysUntilTheScreenCloses]' started.
+Test Case '-[PublitTests.TransitEnhancementTests testUnsavedTripStaysUntilTheScreenCloses]' passed (0.124 seconds).
+Test Suite 'TransitEnhancementTests' passed at 2026-10-17 13:37:07.424.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.601 (0.603) seconds
+Test Suite 'TripGuideTests' started at 2026-10-17 13:37:07.424.
+Test Case '-[PublitTests.TripGuideTests testMissedWhenStillAtTheStopAfterDeparture]' started.
+Test Case '-[PublitTests.TripGuideTests testMissedWhenStillAtTheStopAfterDeparture]' passed (0.002 seconds).
+Test Case '-[PublitTests.TripGuideTests testOnlyCurrentNearbyWalkUsesGPSProgress]' started.
+Test Case '-[PublitTests.TripGuideTests testOnlyCurrentNearbyWalkUsesGPSProgress]' passed (0.001 seconds).
+Test Case '-[PublitTests.TripGuideTests testPositionMovesTheStage]' started.
+Test Case '-[PublitTests.TripGuideTests testPositionMovesTheStage]' passed (0.001 seconds).
+Test Case '-[PublitTests.TripGuideTests testPositionOnTheWalk]' started.
+Test Case '-[PublitTests.TripGuideTests testPositionOnTheWalk]' passed (0.003 seconds).
+Test Case '-[PublitTests.TripGuideTests testRidePositionFromGPSAndStopsLeft]' started.
+Test Case '-[PublitTests.TripGuideTests testRidePositionFromGPSAndStopsLeft]' passed (0.001 seconds).
+Test Case '-[PublitTests.TripGuideTests testStageFollowsTheClock]' started.
+Test Case '-[PublitTests.TripGuideTests testStageFollowsTheClock]' passed (0.001 seconds).
+Test Case '-[PublitTests.TripGuideTests testStagesSkipTheShortChangeWalk]' started.
+Test Case '-[PublitTests.TripGuideTests testStagesSkipTheShortChangeWalk]' passed (0.001 seconds).
+Test Case '-[PublitTests.TripGuideTests testStairsFollowTheWalkingDirection]' started.
+Test Case '-[PublitTests.TripGuideTests testStairsFollowTheWalkingDirection]' passed (0.005 seconds).
+Test Case '-[PublitTests.TripGuideTests testStepsSurviveSavingATrip]' started.
+Test Case '-[PublitTests.TripGuideTests testStepsSurviveSavingATrip]' passed (0.005 seconds).
+Test Case '-[PublitTests.TripGuideTests testTurnKinds]' started.
+Test Case '-[PublitTests.TripGuideTests testTurnKinds]' passed (0.001 seconds).
+Test Suite 'TripGuideTests' passed at 2026-10-17 13:37:07.446.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.019 (0.021) seconds
+Test Suite 'TripProgressTests' started at 2026-10-17 13:37:07.447.
+Test Case '-[PublitTests.TripProgressTests testBeforeDuringAndAfter]' started.
+Test Case '-[PublitTests.TripProgressTests testBeforeDuringAndAfter]' passed (0.004 seconds).
+Test Case '-[PublitTests.TripProgressTests testEmptyTrip]' started.
+Test Case '-[PublitTests.TripProgressTests testEmptyTrip]' passed (0.000 seconds).
+Test Case '-[PublitTests.TripProgressTests testPositionLiesBetweenNeighbouringStops]' started.
+Test Case '-[PublitTests.TripProgressTests testPositionLiesBetweenNeighbouringStops]' passed (0.003 seconds).
+Test Suite 'TripProgressTests' passed at 2026-10-17 13:37:07.455.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.007 (0.008) seconds
+Test Suite 'TripStatusTests' started at 2026-10-17 13:37:07.455.
+Test Case '-[PublitTests.TripStatusTests testCalendarNotesLinkBackToTheApp]' started.
+Test Case '-[PublitTests.TripStatusTests testCalendarNotesLinkBackToTheApp]' passed (0.010 seconds).
+Test Case '-[PublitTests.TripStatusTests testPhasesAlongTheTrip]' started.
+Test Case '-[PublitTests.TripStatusTests testPhasesAlongTheTrip]' passed (0.005 seconds).
+Test Suite 'TripStatusTests' passed at 2026-10-17 13:37:07.483.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.015 (0.028) seconds
+Test Suite 'TripStoreTests' started at 2026-10-17 13:37:07.483.
+Test Case '-[PublitTests.TripStoreTests testSaveDedupeUpcomingPastAndPersist]' started.
+Test Case '-[PublitTests.TripStoreTests testSaveDedupeUpcomingPastAndPersist]' passed (0.041 seconds).
+Test Suite 'TripStoreTests' passed at 2026-10-17 13:37:07.524.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.041 (0.041) seconds
+Test Suite 'WalletPassTests' started at 2026-10-17 13:37:07.524.
+Test Case '-[PublitTests.WalletPassTests testConfigRequiresHTTPSAndPassTypeIdentifier]' started.
+Test Case '-[PublitTests.WalletPassTests testConfigRequiresHTTPSAndPassTypeIdentifier]' passed (0.007 seconds).
+Test Case '-[PublitTests.WalletPassTests testPassJSONAndManifest]' started.
+Test Case '-[PublitTests.WalletPassTests testPassJSONAndManifest]' passed (0.031 seconds).
+Test Case '-[PublitTests.WalletPassTests testPassWithoutRouteUsesGenericStyle]' started.
+Test Case '-[PublitTests.WalletPassTests testPassWithoutRouteUsesGenericStyle]' passed (0.002 seconds).
+Test Case '-[PublitTests.WalletPassTests testSHA1AndCRC32]' started.
+Test Case '-[PublitTests.WalletPassTests testSHA1AndCRC32]' passed (0.001 seconds).
+Test Case '-[PublitTests.WalletPassTests testZipHasLocalHeadersAndCentralDirectory]' started.
+Test Case '-[PublitTests.WalletPassTests testZipHasLocalHeadersAndCentralDirectory]' passed (0.001 seconds).
+Test Suite 'WalletPassTests' passed at 2026-10-17 13:37:07.568.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.042 (0.044) seconds
+Test Suite 'PublitTests.xctest' passed at 2026-10-17 13:37:07.568.
+	 Executed 290 tests, with 0 failures (0 unexpected) in 12.479 (12.707) seconds
+Test Suite 'All tests' passed at 2026-10-17 13:37:07.584.
+	 Executed 290 tests, with 0 failures (0 unexpected) in 12.479 (12.726) seconds
+2026-10-17 13:37:08.916 xcodebuild[12978:41203] [MT] IDETestOperationsObserverDebug: 51.718 elapsed -- Testing started completed.
+2026-10-17 13:37:08.916 xcodebuild[12978:41203] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-17 13:37:08.916 xcodebuild[12978:41203] [MT] IDETestOperationsObserverDebug: 51.719 sec, +51.719 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/Publit/Publit/build/Logs/Test/Test-Publit-2026.10.17_13-36-17-+0000.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started
