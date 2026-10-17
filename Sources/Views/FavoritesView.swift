@@ -36,8 +36,12 @@ struct FavoritesView: View {
 
             upcomingTrips
 
-            if !favorites.lines.isEmpty {
-                Section("Lines") {
+            Section("Lines") {
+                NavigationLink { LinesView() } label: {
+                    Label(L10n.t("Find a line"), systemImage: "magnifyingglass")
+                }
+                .accessibilityIdentifier("findLine")
+                if !favorites.lines.isEmpty {
                     ForEach(favorites.lines) { line in
                         NavigationLink {
                             LineDetailView(line: LineRef(saved: line))
@@ -53,8 +57,8 @@ struct FavoritesView: View {
             }
             if favorites.stops.isEmpty && favorites.places.isEmpty && favorites.lines.isEmpty {
                 Section {
-                    ContentUnavailableView("Nothing else saved yet", systemImage: "star",
-                                           description: Text("Save stops from their departure board, lines from a trip, or add places with +."))
+                    EmptyState(title: L10n.t("Nothing else saved yet"), systemImage: "star",
+                               message: L10n.t("Save stops from their departure board, lines from a trip, or add places with +."))
                 }
             }
             if !favorites.stops.isEmpty {
@@ -89,10 +93,6 @@ struct FavoritesView: View {
         .screenTrail("Saved")
         .withSettingsButton()
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                NavigationLink { LinesView() } label: { Label(L10n.t("Find a line"), systemImage: "point.topleft.down.to.point.bottomright.curvepath") }
-                    .accessibilityIdentifier("findLine")
-            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button { adding = true } label: { Label("Add", systemImage: "plus") }
             }

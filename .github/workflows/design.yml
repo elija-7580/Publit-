@@ -1,0 +1,50 @@
+name: Design screenshots
+
+# The real trip screens on a sample trip, light and dark, as an artifact: quick to look at a design
+# change without running every test. Runs by hand or on branches named design/…
+on:
+  workflow_dispatch:
+  push:
+    branches: ["design/**"]
+
+jobs:
+  shots:
+    name: Design screenshots
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate project
+        run: brew install xcodegen && xcodegen generate
+      - name: Simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; c=[x for k in sorted(d, reverse=True) if 'iOS' in k for x in d[k] if x['name'].startswith('iPhone 16 Pro') and 'Max' not in x['name']]; print(c[0]['udid'])")
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl status_bar "$UDID" override --time "9:41" --batteryState charged --batteryLevel 100 --cellularBars 4 --wifiBars 3 || true
+          xcrun simctl location "$UDID" set 48.15000,11.58030
+          xcrun simctl privacy "$UDID" grant location io.github.publit.app || true
+      - name: Build and screenshot
+        run: |
+          mkdir -p ci/screenshots
+          set -o pipefail
+          xcodebuild build-for-testing -project Publit.xcodeproj -scheme Publit \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee ci/build.log | grep -E ": error:|BUILD" || true
+          grep -q "TEST BUILD SUCCEEDED" ci/build.log
+          xcodebuild test-without-building -project Publit.xcodeproj -scheme Publit \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build \
+            -only-testing:PublitUITests/PublitUITests/testF21DesignScreens \
+            -only-testing:PublitUITests/PublitUITests/testF22StartScreens 2>&1 | tee ci/ui.log | grep -E "Test Case|error:" || true
+          cp ~/publit-shots/*.png ci/screenshots/ 2>/dev/null || true
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-screenshots
+          path: |
+            ci/screenshots
+            ci/build.log
+          if-no-files-found: ignore

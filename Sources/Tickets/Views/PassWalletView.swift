@@ -24,6 +24,7 @@ struct PassWalletView: View {
         .background(Color.ground)
         .navigationTitle(L10n.t("Tickets"))
         .screenTrail("Tickets")
+        .withSettingsButton()
         .navigationDestination(for: PassRoute.self) { PassDetailView(passId: $0.id) }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -72,14 +73,12 @@ struct PassWalletView: View {
     }
 
     private var empty: some View {
-        ContentUnavailableView {
-            Label(L10n.t("No tickets yet"), systemImage: "ticket")
-        } description: {
-            Text("Add a ticket from a PDF, a photo or a screenshot. Publit reads the details on your iPhone and keeps the code ready for the gate.")
-        } actions: {
+        EmptyState(title: L10n.t("No tickets yet"), systemImage: "ticket",
+                   message: L10n.t("Add a ticket from a PDF, a photo or a screenshot. Publit reads the details on your iPhone and keeps the code ready for the gate.")) {
             Button { importing = true } label: { Text("Add ticket") }
                 .buttonStyle(.ink)
         }
+        .frame(maxHeight: .infinity)
     }
 }
 

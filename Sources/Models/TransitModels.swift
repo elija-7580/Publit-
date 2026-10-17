@@ -174,6 +174,31 @@ struct Itinerary: Codable, Identifiable, Sendable {
     var isDirect: Bool { transitLegs.isEmpty }
     /// Departure of the first vehicle (the moment that cannot be missed).
     var firstDeparture: Date? { firstTransitLeg?.startTime }
+
+    /// Same route across live refreshes. The server's `id` encodes current times and changes
+    /// with every delay update, so lists, selection and navigation must not depend on it.
+    var routeKey: String {
+        legs.map { leg in
+            "\(leg.mode)~\(leg.tripId ?? leg.from.name)~\(Int(leg.scheduledStartTime.timeIntervalSince1970))"
+        }.joined(separator: "|")
+    }
+}
+
+extension Array where Element == Itinerary {
+    /// One row per route: a page loaded twice or a refresh must not repeat an identity in a list.
+    var uniqueRoutes: [Itinerary] {
+        var seen = Set<String>()
+        return filter { seen.insert($0.routeKey).inserted }
+    }
+}
+
+/// A route opened from a list. Holds its own copy: a live refresh of the list underneath
+/// neither closes the detail nor swallows the tap that opens it.
+struct OpenedRoute: Hashable, Identifiable {
+    let itinerary: Itinerary
+    var id: String { itinerary.routeKey }
+    static func == (a: OpenedRoute, b: OpenedRoute) -> Bool { a.id == b.id }
+    func hash(into h: inout Hasher) { h.combine(id) }
 }
 
 struct PlanResponse: Decodable, Sendable {

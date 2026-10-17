@@ -7,7 +7,9 @@ struct PlanView: View {
     @Environment(LocationManager.self) private var location
     @State private var picking: PickTarget?
     @State private var showMap = false
+    /// `routeKey` of the route picked on the map (stays picked across live refreshes).
     @State private var selectedId: String?
+    @State private var opened: OpenedRoute?
 
     /// Live refresh interval while planning for "now".
     static var refreshInterval: Duration { Energy.duration(60) }
@@ -19,19 +21,19 @@ struct PlanView: View {
         List {
             Section {
                 // From and To with the swap button between them on the right.
-                HStack(spacing: 8) {
-                    VStack(spacing: 0) {
+                HStack(spacing: 10) {
+                    VStack(spacing: 8) {
                         endpointButton(label: "From", endpoint: plan.from, target: .from)
                             .accessibilityIdentifier("endpoint-from")
-                        Divider()
                         endpointButton(label: "To", endpoint: plan.to, target: .to)
                             .accessibilityIdentifier("endpoint-to")
                     }
                     Button { app.plan.swap() } label: {
                         Image(systemName: "arrow.up.arrow.down")
                             .font(.body.weight(.semibold))
-                            .frame(width: 40, height: 40)
-                            .background(Color.inkFill, in: Circle())
+                            .foregroundStyle(Color.ink)
+                            .frame(width: 42, height: 42)
+                            .raisedKey(radius: 21)
                     }
                     .disabled(plan.to == nil)
                     .accessibilityLabel(Text("Swap"))
@@ -39,11 +41,9 @@ struct PlanView: View {
                 }
                 .buttonStyle(.borderless)
                 // Plan is for later (tonight, next week). "From here, now" lives in Nearby.
-                Picker("When", selection: $plan.timeMode) {
-                    Text("Depart").tag(TimeMode.departAt)
-                    Text("Arrive").tag(TimeMode.arriveBy)
-                }
-                .pickerStyle(.segmented)
+                BevelSegmented(selection: $plan.timeMode,
+                               options: [(TimeMode.departAt, L10n.t("Depart")), (TimeMode.arriveBy, L10n.t("Arrive"))])
+                    .accessibilityLabel(Text("When"))
                 DatePicker(plan.timeMode == .arriveBy ? L10n.t("Arrive by") : L10n.t("Depart at"), selection: $plan.date)
                 RouteOptionsButton(compact: true)
             }
@@ -71,6 +71,7 @@ struct PlanView: View {
             }
         }
         .inkList()
+        .navigationDestination(item: $opened) { route in detail(route.itinerary) }
         .navigationTitle("Plan")
         .screenTrail("Plan")
         .withSettingsButton()
@@ -133,7 +134,9 @@ struct PlanView: View {
                 }
                 Spacer()
             }
-            .frame(minHeight: 44)
+            .padding(.horizontal, 12)
+            .frame(minHeight: 46)
+            .bevelField()
             .contentShape(Rectangle())
         }
         .accessibilityElement(children: .combine)
@@ -146,7 +149,8 @@ struct PlanView: View {
 
     @ViewBuilder
     private func resultsSection(_ plan: PlanModel) -> some View {
-        let its = plan.sortedItineraries
+        let its = plan.sortedItineraries.uniqueRoutes
+        let shownKey = its.contains { $0.routeKey == selectedId } ? selectedId : its.first?.routeKey
         let windowStart = its.map(\.startTime).min() ?? .now
         let windowEnd = its.map(\.endTime).max() ?? .now
         let zoneNote = its.first.flatMap { Fmt.foreignZoneNote(tz: $0.legs.first?.from.tz, at: $0.startTime) }
@@ -160,10 +164,7 @@ struct PlanView: View {
             }
             if let note = plan.walkNote, !its.isEmpty {
                 // Found only with a longer walk: say so, the walk is part of the decision.
-                Label(note, systemImage: "figure.walk")
-                    .font(.footnote).foregroundStyle(Color.delay)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityElement(children: .combine)
+                InlineNotice(text: note, systemImage: "figure.walk")
                     .accessibilityIdentifier("longWalkNote")
             }
 
@@ -172,16 +173,17 @@ struct PlanView: View {
             if !its.isEmpty {
                 // Borderless: two controls in one row, each with its own tap area
                 // (otherwise a tap anywhere in the row triggers both).
-                HStack {
+                HStack(spacing: 8) {
                     RouteSortMenu()
-                        .buttonStyle(.borderless)
                     Spacer()
-                    Button(showMap ? L10n.t("List") : L10n.t("Map")) { withAnimation { showMap.toggle() } }
-                        .font(.caption.weight(.semibold))
-                        .buttonStyle(.borderless)
-                        .frame(minHeight: 44)
-                        .accessibilityIdentifier("routeMapToggle")
+                    Button { withAnimation { showMap.toggle() } } label: {
+                        Label(showMap ? L10n.t("List") : L10n.t("Map"), systemImage: showMap ? "list.bullet" : "map")
+                    }
+                    .buttonStyle(.chip)
+                    .accessibilityIdentifier("routeMapToggle")
                 }
+                .frame(minHeight: 44)
+                .listRowInsets(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
                 .listRowBackground(Color.clear)
             }
 
@@ -189,32 +191,47 @@ struct PlanView: View {
                 ConnectionLegendRow(start: windowStart, end: windowEnd, tz: its.first?.legs.first?.from.tz, showSymbols: false)
             }
             if showMap && !its.isEmpty {
-                CompareMapView(itineraries: its, selectedId: selectedId ?? its.first?.id)
+                CompareMapView(itineraries: its, selectedId: shownKey)
                     .frame(height: 320)
                     .listRowInsets(EdgeInsets())
-                if let sel = its.first(where: { $0.id == (selectedId ?? its.first?.id) }) {
-                    NavigationLink("Details of selected route") { detail(sel) }
+                if let sel = its.first(where: { $0.routeKey == shownKey }) {
+                    Button("Details of selected route") { opened = OpenedRoute(itinerary: sel) }
                 }
-                ForEach(its) { it in
-                    Button { selectedId = it.id } label: {
+                ForEach(its, id: \.routeKey) { it in
+                    let isSelected = it.routeKey == shownKey
+                    // First tap picks the route on the map, a tap on the picked one opens it.
+                    Button {
+                        if isSelected { opened = OpenedRoute(itinerary: it) } else { selectedId = it.routeKey }
+                    } label: {
                         ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
                             .padding(.leading, 6)
                             .overlay(alignment: .leading) {
-                                if it.id == (selectedId ?? its.first?.id) {
+                                if isSelected {
                                     Capsule().fill(Color.ink).frame(width: 3)
                                 }
                             }
+                            // The whole row answers, not only its text and bars: a long trip
+                            // draws thin bars with lots of empty space between them.
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityAddTraits(it.id == (selectedId ?? its.first?.id) ? .isSelected : [])
+                    .accessibilityAddTraits(isSelected ? .isSelected : [])
+                    .accessibilityHint(isSelected ? Text("Opens the route") : Text("Shows the route on the map"))
                 }
             } else {
-                ForEach(its) { it in
-                    NavigationLink {
-                        detail(it)
-                    } label: {
-                        ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
+                ForEach(its, id: \.routeKey) { it in
+                    Button { opened = OpenedRoute(itinerary: it) } label: {
+                        HStack(spacing: 8) {
+                            ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
+                            Image(systemName: "chevron.right")
+                                .font(.footnote.weight(.semibold))
+                                .foregroundStyle(.tertiary)
+                                .accessibilityHidden(true)
+                        }
+                        .contentShape(Rectangle())
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityAddTraits(.isLink)
                 }
             }
 
@@ -228,8 +245,6 @@ struct PlanView: View {
                     }
                 }
             }
-        } header: {
-            Text("Routes")
         } footer: {
             if !its.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
@@ -279,13 +294,10 @@ struct ItineraryRow: View {
             .font(.caption)
             .foregroundStyle(.secondary)
             if itinerary.transitLegs.contains(where: { !$0.serviceAlerts.isEmpty || $0.isReplacementBus }) {
-                Label("Service changes on this route", systemImage: "exclamationmark.triangle.fill")
-                    .font(.caption.weight(.semibold)).foregroundStyle(Color.delay)
+                InlineNotice(text: L10n.t("Service changes on this route"))
             }
             ForEach(warnings, id: \.self) { w in
-                Label(w.message, systemImage: "exclamationmark.triangle.fill")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(w.level == .missed ? Color.danger : Color.delay)
+                InlineNotice(text: w.message, tint: w.level == .missed ? Color.danger : Color.delay)
             }
         }
         .padding(.vertical, 4)
@@ -364,10 +376,10 @@ struct RouteSortMenu: View {
             }
         } label: {
             Label(current.title, systemImage: "arrow.up.arrow.down")
-                .font(.caption.weight(.semibold))
                 .textCase(nil)
         }
+        .menuStyle(.button)
+        .buttonStyle(.chip)
         .accessibilityIdentifier("routeSortMenu")
-        .padding(.trailing, 8)
     }
 }

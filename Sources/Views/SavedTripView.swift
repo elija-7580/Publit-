@@ -23,8 +23,16 @@ struct SavedTripView: View {
                 }
             }
             .environment(\.liveBarInset, errorMessage == nil ? liveInset : 0)
+            // On the live trip the panel covers the bottom: the note sits at the top there.
+            .safeAreaInset(edge: .top, spacing: 0) {
+                if let errorMessage, trips.activeTrip?.id == tripId {
+                    Text(errorMessage).font(.caption).padding(8)
+                        .matteSurface(in: RoundedRectangle(cornerRadius: 12))
+                        .padding(.horizontal, 12).padding(.top, 4)
+                }
+            }
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                if let errorMessage {
+                if let errorMessage, trips.activeTrip?.id != tripId {
                     Text(errorMessage).font(.caption).padding(8)
                         .matteSurface(in: RoundedRectangle(cornerRadius: 12))
                         .padding(.horizontal, 12).padding(.bottom, 8 + liveInset)

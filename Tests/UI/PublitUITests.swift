@@ -181,6 +181,76 @@ final class PublitUITests: XCTestCase {
         widgets.terminate()
     }
 
+    /// F21 Design screenshots of the real trip screens on a longer sample trip, light and dark:
+    /// the route preview, the live trip with the panel down and pulled up.
+    func testF21DesignScreens() {
+        for dark in [false, true] {
+            let suffix = dark ? "-dark" : ""
+            var app = sample("route", dark: dark)
+            allowLocation()
+            sleep(6) // map tiles
+            snap("design-route\(suffix)")
+            app.swipeUp()
+            sleep(1)
+            snap("design-route-steps\(suffix)")
+            app.terminate()
+
+            app = sample("live", dark: dark)
+            allowLocation()
+            sleep(10) // map tiles
+            snap("design-live\(suffix)")
+            let window = app.windows.firstMatch
+            window.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.74))
+                .press(forDuration: 0.05, thenDragTo: window.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.12)))
+            sleep(2)
+            snap("design-live-up\(suffix)")
+            app.swipeUp()
+            sleep(1)
+            snap("design-live-up-more\(suffix)")
+            app.terminate()
+        }
+    }
+
+    /// The start screens (Nearby, Plan with results, Tickets, Saved), light and dark.
+    func testF22StartScreens() {
+        for dark in [false, true] {
+            let suffix = dark ? "-dark" : ""
+            let app = XCUIApplication()
+            app.launchArguments = ["-AppleLanguages", "(de)", "-AppleLocale", "de_AT"]
+            app.launchEnvironment = ["PUBLIT_DEMO": "munich", "PUBLIT_TAB": "nearby", "PUBLIT_UI_DARK": dark ? "1" : "0"]
+            app.launch()
+            allowLocation()
+            sleep(10) // departures and map
+            snap("start-nearby\(suffix)")
+            app.swipeUp()
+            sleep(2)
+            snap("start-nearby-more\(suffix)")
+            let tabs = app.tabBars.buttons
+            tabs.element(boundBy: 1).tap()
+            sleep(12) // routes
+            snap("start-plan\(suffix)")
+            app.swipeUp()
+            sleep(2)
+            snap("start-plan-more\(suffix)")
+            tabs.element(boundBy: 2).tap()
+            sleep(2)
+            snap("start-tickets\(suffix)")
+            tabs.element(boundBy: 3).tap()
+            sleep(2)
+            snap("start-saved\(suffix)")
+            app.terminate()
+        }
+    }
+
+    /// Answers the location prompt, which would cover the screenshot.
+    private func allowLocation() {
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        for label in ["Allow While Using App", "Beim Verwenden der App erlauben"] {
+            let allow = springboard.buttons[label]
+            if allow.waitForExistence(timeout: 3) { allow.tap(); return }
+        }
+    }
+
     func testF10StartEndTripAndEmbeddedTicket() {
         let app = sample("workflow")
         let start = app.buttons["startTrip"]
@@ -286,7 +356,7 @@ final class PublitUITests: XCTestCase {
     func testF02PlanCompareAndDetail() {
         let app = launch(["PUBLIT_DEMO": "munich", "PUBLIT_TAB": "plan"])
         XCTAssertTrue(app.navigationBars["Plan"].waitForExistence(timeout: 10))
-        let routes = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'from Marienplatz'"))
+        let routes = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] ' from '"))
         XCTAssertTrue(routes.firstMatch.waitForExistence(timeout: timeout), "no routes found")
         sleep(1)
         snap("plan")
@@ -387,7 +457,7 @@ final class PublitUITests: XCTestCase {
     /// F07 Save a planned route: it appears under Upcoming trips in Saved, with ticket links in the details.
     func testF07SaveTripAndTickets() {
         let app = launch(["PUBLIT_DEMO": "munich", "PUBLIT_TAB": "plan"])
-        let routes = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'from Marienplatz'"))
+        let routes = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] ' from '"))
         XCTAssertTrue(routes.firstMatch.waitForExistence(timeout: timeout), "no routes found")
         routes.firstMatch.tap()
         XCTAssertTrue(app.navigationBars["Route"].waitForExistence(timeout: 10))
@@ -443,7 +513,7 @@ final class PublitUITests: XCTestCase {
         app.terminate()
 
         let plan = launch(["PUBLIT_DEMO": "munich", "PUBLIT_TAB": "plan"])
-        let routes = plan.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'from Marienplatz'"))
+        let routes = plan.buttons.matching(NSPredicate(format: "label CONTAINS[c] ' from '"))
         XCTAssertTrue(routes.firstMatch.waitForExistence(timeout: timeout), "no routes found")
         // Driving comes a little after the routes (its own, slower request).
         let car = plan.buttons["compare-CAR"]
@@ -510,7 +580,7 @@ final class PublitUITests: XCTestCase {
         map.terminate()
 
         let plan = launch(["PUBLIT_DEMO": "munich", "PUBLIT_TAB": "plan"])
-        let routes = plan.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'from Marienplatz'"))
+        let routes = plan.buttons.matching(NSPredicate(format: "label CONTAINS[c] ' from '"))
         XCTAssertTrue(routes.firstMatch.waitForExistence(timeout: timeout), "no routes found")
         // Any element type: a SwiftUI Menu in a list row is not always reported as a button.
         let sort = plan.descendants(matching: .any)["routeSortMenu"].firstMatch

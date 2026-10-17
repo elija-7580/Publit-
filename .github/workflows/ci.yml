@@ -76,10 +76,19 @@ jobs:
           set -o pipefail
           xcodebuild test-without-building -project Publit.xcodeproj -scheme Publit \
             -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath build \
-            -only-testing:PublitUITests 2>&1 | tee ci/ui.log | grep -E "Test Case|error:|Executed" || true
+            -only-testing:PublitUITests \
+            -skip-testing:PublitUITests/PublitUITests/testF21DesignScreens \
+            -skip-testing:PublitUITests/PublitUITests/testF22StartScreens 2>&1 | tee ci/ui.log | grep -E "Test Case|error:|Executed" || true
           mkdir -p ci/screenshots && cp ~/publit-shots/*.png ci/screenshots/ 2>/dev/null || true
           grep -E ": error: |WATCHDOG" ci/ui.log | sed -E "s#${GITHUB_WORKSPACE}/##" > ci/ui-failures.txt || true
           grep -q "TEST EXECUTE SUCCEEDED" ci/ui.log
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: ci/screenshots
+          if-no-files-found: ignore
       - name: Publish results to the ci-results branch
         if: always() && github.event_name != 'pull_request'
         run: |

@@ -29,6 +29,15 @@ struct PublitApp: App {
         #endif
     }
 
+    /// Screenshot runs force light or dark (`PUBLIT_UI_DARK`); otherwise the system decides.
+    private static var forcedScheme: ColorScheme? {
+        switch ProcessInfo.processInfo.environment["PUBLIT_UI_DARK"] {
+        case "1": .dark
+        case "0": .light
+        default: nil
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             appContent
@@ -41,6 +50,7 @@ struct PublitApp: App {
                 .environment(history)
                 .tint(Color.ink)
                 .toggleStyle(InkSwitchStyle())
+                .preferredColorScheme(Self.forcedScheme)
                 .onOpenURL { app.open($0) }
                 .onAppear {
                     app.applyDemo(ProcessInfo.processInfo.environment["PUBLIT_DEMO"])

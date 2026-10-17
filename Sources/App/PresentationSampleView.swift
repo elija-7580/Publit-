@@ -60,6 +60,9 @@ struct PresentationSampleView: View {
             PassSampleView(kind: kind)
                 .preferredColorScheme(dark ? .dark : .light)
                 .dynamicTypeSize(large ? .accessibility2 : .large)
+        } else if kind.hasPrefix("route") || kind.hasPrefix("live") {
+            DesignSampleView(kind: kind)
+                .preferredColorScheme(dark ? .dark : .light)
         } else {
             standard
         }

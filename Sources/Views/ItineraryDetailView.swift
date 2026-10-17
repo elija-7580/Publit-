@@ -7,17 +7,17 @@ struct CompareMapView: View {
 
     /// Selected route is drawn last so it sits on top.
     private var ordered: [Itinerary] {
-        itineraries.filter { $0.id != selectedId } + itineraries.filter { $0.id == selectedId }
+        itineraries.filter { $0.routeKey != selectedId } + itineraries.filter { $0.routeKey == selectedId }
     }
 
     var body: some View {
         Map(initialPosition: .automatic) {
             UserAnnotation()
-            ForEach(ordered) { it in
-                let isSelected = it.id == selectedId
+            ForEach(ordered, id: \.routeKey) { it in
+                let isSelected = it.routeKey == selectedId
                 ForEach(Array(it.legs.enumerated()), id: \.offset) { _, leg in
                     MapPolyline(coordinates: leg.legGeometry.clCoordinates)
-                        .stroke(isSelected ? leg.lineStroke : Color.gray.opacity(0.45),
+                        .stroke(isSelected ? (leg.isTransit ? leg.lineStroke : Color.routeAhead) : Color.gray.opacity(0.45),
                                 style: .leg(leg.isTransit, width: isSelected ? 5 : 3))
                 }
             }
@@ -37,6 +37,7 @@ struct ItineraryDetailView: View {
     /// Only the banner redraws on that timer, not the map and the steps.
     var statusAt: ((Date) -> TripStatus)? = nil
     var refreshedAt: Date? = nil
+    @State private var showsMap = false
 
     private var isBikeOrCar: Bool {
         let m = StreetComparison.streetMode(itinerary)
@@ -55,19 +56,33 @@ struct ItineraryDetailView: View {
     var body: some View {
         let warnings = TransferRisk.warnings(for: itinerary)
         List {
-            // 1. What matters first: when, how long, which lines, live state and warnings.
+            // 1. What matters first: the way at a glance, when, how long, which lines, live state and warnings.
             Section {
+                Button { showsMap = true } label: {
+                    RouteMap(itinerary: itinerary)
+                        .frame(height: 190)
+                        .allowsHitTesting(false)
+                        .overlay(alignment: .bottomTrailing) {
+                            Image(systemName: "arrow.up.left.and.arrow.down.right")
+                                .font(.body.weight(.semibold))
+                                .frame(width: 40, height: 40)
+                                .matteSurface(in: Circle())
+                                .padding(10)
+                        }
+                }
+                .buttonStyle(.plain)
+                .listRowInsets(EdgeInsets())
+                .accessibilityLabel(Text("Trip overview"))
+                .accessibilityIdentifier("routePreviewMap")
                 if let statusAt {
                     Clocked(every: 30) { now in
                         StatusBanner(status: statusAt(now), refreshedAt: refreshedAt)
                     }
                 }
-                RouteSummary(itinerary: itinerary)
-                ForEach(warnings, id: \.self) { w in
-                    Label(w.message, systemImage: "exclamationmark.triangle.fill")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(w.level == .missed ? Color.danger : Color.delay)
-                }
+                Clocked(every: 30) { now in LeaveHero(itinerary: itinerary, now: now) }
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+                RouteSummary(itinerary: itinerary, showsTimes: false)
                 if let note = Fmt.foreignZoneNote(tz: itinerary.legs.first?.from.tz, at: itinerary.startTime) {
                     Label(note, systemImage: "clock").font(.footnote).foregroundStyle(.secondary)
                 }
@@ -77,29 +92,43 @@ struct ItineraryDetailView: View {
                 }
             }
 
+            // Warnings in one calm form: a coloured edge, the words in ink.
+            if !warnings.isEmpty {
+                Section {
+                    ForEach(warnings, id: \.self) { w in
+                        Notice(level: w.level == .missed ? .critical : .change, title: w.message)
+                    }
+                }
+            }
+
             // 2. What you can do with it, right below: start, save, calendar, reminder.
             // Cycling and driving are shown for comparison only: no trip, reminder or fares.
             if !isBikeOrCar {
                 TripActionsSection(itinerary: itinerary, fromName: resolvedFrom, toName: resolvedTo)
             }
 
-            // 3. The way, step by step.
+            // 3. The way, step by step, as a timeline: times on the left, the line in its colour.
             Section("Steps") {
                 ForEach(Array(itinerary.legs.enumerated()), id: \.offset) { _, leg in
-                    LegRow(leg: leg)
+                    TimelineLegRow(leg: leg)
                 }
-            }
-
-            // 4. The map last: it is the most expensive row and the List only builds it when it scrolls in.
-            Section {
-                RouteMap(itinerary: itinerary)
-                    .frame(height: 240)
-                    .listRowInsets(EdgeInsets())
+                TimelineEndRow(time: itinerary.endTime, tz: itinerary.legs.last?.to.tz, name: resolvedTo)
             }
 
             if !isBikeOrCar { FareSection(itinerary: itinerary) }
         }
         .inkList()
+        .sheet(isPresented: $showsMap) {
+            NavigationStack {
+                RouteMap(itinerary: itinerary)
+                    .ignoresSafeArea(edges: .bottom)
+                    .navigationTitle(Text("Trip overview"))
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) { Button("Done") { showsMap = false } }
+                    }
+            }
+        }
         .navigationTitle("Route")
         .screenTrail("Route")
         .navigationBarTitleDisplayMode(.inline)
@@ -113,22 +142,26 @@ struct ItineraryDetailView: View {
 /// Time, duration and the chain of lines, e.g. 🚶 › S8 › U6 › 🚶.
 struct RouteSummary: View {
     let itinerary: Itinerary
+    /// Off under the leave card, which already shows them.
+    var showsTimes = true
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             // Chosen by text size, not ViewThatFits: measuring both layouts in a self-sizing row
             // can make the row's height flip between passes.
-            if typeSize.isAccessibilitySize {
-                stackedTimes
-            } else {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("\(Fmt.time(itinerary.startTime, tz: itinerary.legs.first?.from.tz)) – \(Fmt.time(itinerary.endTime, tz: itinerary.legs.last?.to.tz))")
-                        .font(.title2.weight(.bold).monospacedDigit())
-                        .lineLimit(1).minimumScaleFactor(0.7)
-                    Spacer(minLength: 8)
-                    DurationFigure(seconds: itinerary.duration)
-                        .lineLimit(1).fixedSize()
+            if showsTimes {
+                if typeSize.isAccessibilitySize {
+                    stackedTimes
+                } else {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text("\(Fmt.time(itinerary.startTime, tz: itinerary.legs.first?.from.tz)) – \(Fmt.time(itinerary.endTime, tz: itinerary.legs.last?.to.tz))")
+                            .font(.title2.weight(.bold).monospacedDigit())
+                            .lineLimit(1).minimumScaleFactor(0.7)
+                        Spacer(minLength: 8)
+                        DurationFigure(seconds: itinerary.duration)
+                            .lineLimit(1).fixedSize()
+                    }
                 }
             }
             legChain
@@ -217,11 +250,10 @@ struct FlowRow: Layout {
 }
 
 extension StrokeStyle {
-    /// Route lines on maps: rides solid, walks as a row of dots like in Apple Maps (thick dashes
-    /// next to each other looked like a rope ladder).
+    /// Route lines on maps: always solid. Walks are told apart by colour (`Color.routeAhead`) and a
+    /// slightly thinner line; the dotted walks of earlier builds broke up or vanished on the map.
     static func leg(_ isTransit: Bool, width: CGFloat) -> StrokeStyle {
-        isTransit ? StrokeStyle(lineWidth: width, lineCap: .round, lineJoin: .round)
-            : StrokeStyle(lineWidth: width, lineCap: .round, lineJoin: .round, dash: [0.1, width * 2])
+        StrokeStyle(lineWidth: isTransit ? width : max(3, width - 1), lineCap: .round, lineJoin: .round)
     }
 }
 
@@ -234,8 +266,7 @@ struct RouteMap: View {
             UserAnnotation()
             ForEach(Array(itinerary.legs.enumerated()), id: \.offset) { _, leg in
                 MapPolyline(coordinates: leg.legGeometry.clCoordinates)
-                    .stroke(leg.isTransit ? leg.lineStroke : Color.gray,
-                            style: .leg(leg.isTransit, width: 5))
+                    .stroke(leg.isTransit ? leg.lineStroke : Color.routeAhead, style: .leg(leg.isTransit, width: 5))
             }
             if let first = itinerary.legs.first {
                 Marker("Start", systemImage: "circle.fill", coordinate: first.from.coordinate.clCoordinate)
@@ -252,6 +283,8 @@ struct RouteMap: View {
 
 struct LegRow: View {
     let leg: Leg
+    /// Its own coloured bar on the left; off inside the timeline, which draws the line itself.
+    var bar = true
 
     var body: some View {
         if leg.isTransit {
@@ -283,10 +316,12 @@ struct LegRow: View {
                 GetOffButton(leg: leg)
             }
             .padding(.vertical, 6)
-            .padding(.leading, 12)
+            .padding(.leading, bar ? 12 : 0)
             .overlay(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 2).fill(leg.lineStroke).frame(width: 4).padding(.vertical, 6)
-                    .accessibilityHidden(true)
+                if bar {
+                    RoundedRectangle(cornerRadius: 2).fill(leg.lineStroke).frame(width: 4).padding(.vertical, 6)
+                        .accessibilityHidden(true)
+                }
             }
             .accessibilityIdentifier("transitLeg")
         } else {
@@ -410,6 +445,114 @@ struct StatusBanner: View {
                     .font(.caption2).foregroundStyle(.secondary)
             }
         }
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// One leg in the route timeline: when it starts, a stop on the line (solid in the line's colour,
+/// dotted blue on foot) and the leg itself.
+struct TimelineLegRow: View {
+    let leg: Leg
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            Text(Fmt.time(leg.startTime, tz: leg.from.tz))
+                .font(.subheadline.weight(.semibold).monospacedDigit())
+                .frame(width: 52, alignment: .trailing)
+                .padding(.top, 10)
+            TimelineRail(color: leg.isTransit ? leg.lineStroke : Color.secondary, dotted: !leg.isTransit)
+            LegRow(leg: leg, bar: false)
+                .padding(.vertical, 4)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .listRowInsets(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 16))
+        .listRowSeparator(.hidden)
+    }
+}
+
+/// The end of the timeline: arrival time and the destination.
+struct TimelineEndRow: View {
+    let time: Date
+    let tz: String?
+    let name: String
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 10) {
+            Text(Fmt.time(time, tz: tz))
+                .font(.subheadline.weight(.semibold).monospacedDigit())
+                .frame(width: 52, alignment: .trailing)
+            Image(systemName: "flag.checkered.circle.fill")
+                .font(.title3).foregroundStyle(Color.ink)
+                .frame(width: 18)
+            Text(name).font(.headline)
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, 8)
+        .listRowInsets(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 16))
+        .listRowSeparator(.hidden)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+private struct TimelineRail: View {
+    let color: Color
+    let dotted: Bool
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Circle()
+                .strokeBorder(color, lineWidth: 3)
+                .background(Circle().fill(Color.surface))
+                .frame(width: 14, height: 14)
+                .padding(.top, 12)
+            RailLine()
+                .stroke(color, style: StrokeStyle(lineWidth: dotted ? 3 : 5, lineCap: .round, dash: dotted ? [0.1, 7] : []))
+                .frame(width: 18)
+        }
+        .frame(width: 18)
+        .frame(maxHeight: .infinity)
+        .accessibilityHidden(true)
+    }
+}
+
+private struct RailLine: Shape {
+    func path(in rect: CGRect) -> Path {
+        var p = Path()
+        p.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        p.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+        return p
+    }
+}
+
+/// The one number that decides: when to leave (or the times), and when you arrive. Ink slab, big type.
+struct LeaveHero: View {
+    let itinerary: Itinerary
+    let now: Date
+
+    var body: some View {
+        let tz = itinerary.legs.first?.from.tz
+        let minutes = Int((itinerary.startTime.timeIntervalSince(now) / 60).rounded(.up))
+        let big: String = minutes > 90 || minutes < -1
+            ? "\(Fmt.time(itinerary.startTime, tz: tz)) – \(Fmt.time(itinerary.endTime, tz: itinerary.legs.last?.to.tz))"
+            : minutes >= 1 ? L10n.f("Leave in %lld min", minutes) : L10n.t("Leave now")
+        HStack(alignment: .lastTextBaseline) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(Fmt.duration(seconds: itinerary.duration))
+                    .font(.caption.weight(.semibold)).opacity(0.65)
+                Text(verbatim: big)
+                    .font(.title2.weight(.heavy).monospacedDigit())
+                    .lineLimit(1).minimumScaleFactor(0.6)
+            }
+            Spacer(minLength: 12)
+            VStack(alignment: .trailing, spacing: 2) {
+                Text("Arrive").font(.caption.weight(.semibold)).opacity(0.65)
+                Text(Fmt.time(itinerary.endTime, tz: itinerary.legs.last?.to.tz))
+                    .font(.title2.weight(.heavy).monospacedDigit())
+            }
+        }
+        .foregroundStyle(Color.onInk)
+        .padding(.horizontal, 18).padding(.vertical, 14)
+        .background(Color.ink, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
         .accessibilityElement(children: .combine)
     }
 }

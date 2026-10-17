@@ -15,7 +15,7 @@ struct GoNowView: View {
         let windowEnd = its.map(\.endTime).max() ?? .now
         List {
             if !its.isEmpty {
-                CompareMapView(itineraries: its, selectedId: selectedId ?? its.first?.id)
+                CompareMapView(itineraries: its, selectedId: selectedId ?? its.first?.routeKey)
                     .frame(height: 220)
                     .listRowInsets(EdgeInsets())
             }
@@ -53,7 +53,7 @@ struct GoNowView: View {
                             ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
                         }
                     }
-                    .simultaneousGesture(TapGesture().onEnded { selectedId = it.id })
+                    .simultaneousGesture(TapGesture().onEnded { selectedId = it.routeKey })
                 }
                 if plan.canLoadMore {
                     Button("Later connections") { Task { await plan.loadMore() } }
