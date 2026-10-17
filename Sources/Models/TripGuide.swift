@@ -45,6 +45,15 @@ enum TripGuide {
 
     /// The stage now. A fix moves it on when the stop is reached early, and back to the walk
     /// while the stop is still far away.
+    /// The trip is over: at the destination once the last ride is over, or ten minutes after the arrival.
+    static func isFinished(_ it: Itinerary, at now: Date, location: LatLon?) -> Bool {
+        guard let last = it.legs.last else { return true }
+        if now > it.endTime.addingTimeInterval(10 * 60) { return true }
+        let lastRideEnd = it.legs.last(where: \.isTransit)?.endTime ?? it.startTime
+        if let location, now >= lastRideEnd, location.distance(to: last.to.coordinate) < 80 { return true }
+        return false
+    }
+
     static func current(_ steps: [GuideStep], _ it: Itinerary, at now: Date, location: LatLon?) -> Int {
         let k = timeIndex(steps, it, at: now)
         guard let loc = location, steps.indices.contains(k) else { return k }

@@ -50,6 +50,16 @@ final class TripGuideTests: XCTestCase {
         XCTAssertEqual(kind(40), "arrive4")
     }
 
+    func testTripEndsAtTheDestinationOrLaterByItself() throws {
+        let it = try trip()
+        let office = LatLon(lat: 48, lon: 11.063)
+        XCTAssertFalse(TripGuide.isFinished(it, at: at(25), location: office), "still riding: not over at the door")
+        XCTAssertTrue(TripGuide.isFinished(it, at: at(31), location: office))
+        XCTAssertFalse(TripGuide.isFinished(it, at: at(31), location: LatLon(lat: 48, lon: 11.060)))
+        XCTAssertFalse(TripGuide.isFinished(it, at: at(40), location: nil))
+        XCTAssertTrue(TripGuide.isFinished(it, at: at(45), location: nil))
+    }
+
     func testOnlyCurrentNearbyWalkUsesGPSProgress() throws {
         let route = WalkRoute(leg: try trip().legs[0])
         let halfway = LatLon(lat: 48, lon: 11.002)

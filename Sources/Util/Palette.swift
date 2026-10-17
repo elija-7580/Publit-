@@ -20,6 +20,10 @@ public enum Palette {
     /// Filled controls with a white label (swipe actions): ink in light mode, dark grey in dark mode,
     /// where light ink would hide the label.
     public static let inkAction = Tone(light: "111111", dark: "3a3a3d")
+    /// Route lines on maps, as in Apple Maps: the way still ahead in blue (walks; rides keep their
+    /// line colour), the part already behind you in light blue, whatever the mode.
+    public static let routeAhead    = Tone(light: "0a7cff", dark: "409cff")
+    public static let routeTraveled = Tone(light: "a9cdfa", dark: "5b7fa8")
     /// The yellow dot of the logo: only for "you" and "live", never as a fill.
     public static let signature = Tone(light: "ffc531", dark: "ffc531")
     /// System background colours the tones are drawn on (light: white and grouped grey; dark: black and grouped dark grey).

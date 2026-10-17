@@ -10,6 +10,8 @@ extension Color {
     static let onInk = Color(Palette.onInk)
     static let signature = Color(Palette.signature)
     static let inkAction = Color(Palette.inkAction)
+    static let routeAhead = Color(Palette.routeAhead)
+    static let routeTraveled = Color(Palette.routeTraveled)
 }
 
 /// The main action: an ink slab with the label in `onInk` (black on light, white on dark).

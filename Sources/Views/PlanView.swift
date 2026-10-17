@@ -7,7 +7,9 @@ struct PlanView: View {
     @Environment(LocationManager.self) private var location
     @State private var picking: PickTarget?
     @State private var showMap = false
+    /// `routeKey` of the route picked on the map (stays picked across live refreshes).
     @State private var selectedId: String?
+    @State private var opened: OpenedRoute?
 
     /// Live refresh interval while planning for "now".
     static var refreshInterval: Duration { Energy.duration(60) }
@@ -71,6 +73,7 @@ struct PlanView: View {
             }
         }
         .inkList()
+        .navigationDestination(item: $opened) { route in detail(route.itinerary) }
         .navigationTitle("Plan")
         .screenTrail("Plan")
         .withSettingsButton()
@@ -146,7 +149,8 @@ struct PlanView: View {
 
     @ViewBuilder
     private func resultsSection(_ plan: PlanModel) -> some View {
-        let its = plan.sortedItineraries
+        let its = plan.sortedItineraries.uniqueRoutes
+        let shownKey = its.contains { $0.routeKey == selectedId } ? selectedId : its.first?.routeKey
         let windowStart = its.map(\.startTime).min() ?? .now
         let windowEnd = its.map(\.endTime).max() ?? .now
         let zoneNote = its.first.flatMap { Fmt.foreignZoneNote(tz: $0.legs.first?.from.tz, at: $0.startTime) }
@@ -189,32 +193,47 @@ struct PlanView: View {
                 ConnectionLegendRow(start: windowStart, end: windowEnd, tz: its.first?.legs.first?.from.tz, showSymbols: false)
             }
             if showMap && !its.isEmpty {
-                CompareMapView(itineraries: its, selectedId: selectedId ?? its.first?.id)
+                CompareMapView(itineraries: its, selectedId: shownKey)
                     .frame(height: 320)
                     .listRowInsets(EdgeInsets())
-                if let sel = its.first(where: { $0.id == (selectedId ?? its.first?.id) }) {
-                    NavigationLink("Details of selected route") { detail(sel) }
+                if let sel = its.first(where: { $0.routeKey == shownKey }) {
+                    Button("Details of selected route") { opened = OpenedRoute(itinerary: sel) }
                 }
-                ForEach(its) { it in
-                    Button { selectedId = it.id } label: {
+                ForEach(its, id: \.routeKey) { it in
+                    let isSelected = it.routeKey == shownKey
+                    // First tap picks the route on the map, a tap on the picked one opens it.
+                    Button {
+                        if isSelected { opened = OpenedRoute(itinerary: it) } else { selectedId = it.routeKey }
+                    } label: {
                         ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
                             .padding(.leading, 6)
                             .overlay(alignment: .leading) {
-                                if it.id == (selectedId ?? its.first?.id) {
+                                if isSelected {
                                     Capsule().fill(Color.ink).frame(width: 3)
                                 }
                             }
+                            // The whole row answers, not only its text and bars: a long trip
+                            // draws thin bars with lots of empty space between them.
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityAddTraits(it.id == (selectedId ?? its.first?.id) ? .isSelected : [])
+                    .accessibilityAddTraits(isSelected ? .isSelected : [])
+                    .accessibilityHint(isSelected ? Text("Opens the route") : Text("Shows the route on the map"))
                 }
             } else {
-                ForEach(its) { it in
-                    NavigationLink {
-                        detail(it)
-                    } label: {
-                        ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
+                ForEach(its, id: \.routeKey) { it in
+                    Button { opened = OpenedRoute(itinerary: it) } label: {
+                        HStack(spacing: 8) {
+                            ItineraryRow(itinerary: it, windowStart: windowStart, windowEnd: windowEnd)
+                            Image(systemName: "chevron.right")
+                                .font(.footnote.weight(.semibold))
+                                .foregroundStyle(.tertiary)
+                                .accessibilityHidden(true)
+                        }
+                        .contentShape(Rectangle())
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityAddTraits(.isLink)
                 }
             }
 
